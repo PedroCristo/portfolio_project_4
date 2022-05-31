@@ -49,10 +49,10 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     time_to_cook = models.IntegerField(default=0)
     stars = models.PositiveIntegerField(
-            default=1,
+            default=3,
             validators=[
             MinValueValidator(1),
-            MaxValueValidator(8)])
+            MaxValueValidator(5)])
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
