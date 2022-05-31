@@ -1,0 +1,26 @@
+{% load static %}
+
+<!-- JQUERY CDN -->
+<script src="//code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<!-- IF CDN FAILS TO LOAD SERVE UP THE LOCAL VERSION -->
+<script>
+    window.jquery || document.write("<script src='{% static 'js/jquery_3.6.0.js' %}'><\/script>")
+</script>
+<!-- JQUERY UI -->
+<script src="{% static 'js/jquery-ui-1.12.1/jquery-ui.min.js' %}"></script>
+<!-- BOOTSTRAP JS -->
+<script src="{% static 'bootstrap/bootstrap_5.1.0/js/bootstrap.min.js' %}"></script>
+<!-- MY JS -->
+<script src="{% static 'js/my_script.js' %}"></script>
+
+<script>
+    // Settimeout to dismiss the alert box
+    setTimeout(function () {
+        let messages = document.getElementById('alert');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 3500);
+</script>
+</body>
+
+</html>

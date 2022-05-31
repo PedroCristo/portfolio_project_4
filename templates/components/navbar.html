@@ -1,0 +1,102 @@
+{% load static %}
+
+
+ <!-- SEARCH BOX SECTION -->
+ <section id="search-box">
+    <div class="search-nav">
+        <img src="{% static 'images/logos/logo-tasty-blog-small-removebg.png' %}" alt="Tasty blog logo">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
+                {% csrf_token %}
+                <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- END OF SEARCH BOX SECTION -->
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand"><img
+                src="{% static 'images/logos/logo-tasty-blog-small-removebg.png' %}" alt="Tasty blog logo"></a>
+        <button class="navbar-toggler box-shadow" style="text-align: center;" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                </li>
+                <li>
+                    <a class="nav-link active" aria-current="page" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/categories">Categories</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        {% for category in categories_list %}
+                        <li><a class="dropdown-item" href="{% url 'categories_posts' category.title %}">{{ category.title }}</a></li>
+                        {% endfor%}
+                    </ul>
+                </li>
+            </ul>
+            <ul class="d-flex login-box">
+                {% if user.is_authenticated %}
+                <li class="nav-item display-inline">
+                    <li>
+                        <a href="/profile"><p class="nav-link">| <i class="fa fa-user" aria-hidden="true"></i>{{ user.username }}</p></a> 
+                        
+                    </li>
+                    <li><img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image"></li>
+                    
+                    <a class="nav-link test-center" href="{% url 'account_logout' %}"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">| Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login |</a>
+                </li>
+                {% endif %}
+            </ul>
+            <p id="search-box-button" class="btn"><i class="fas fa-search"></i></p>
+        </div>
+    </div>
+</nav>
+<!-- END OF NAVBAR -->
+<br><br><br>
+<!-- ALERT SECTION -->
+<section id="alert-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show alert-success" id="alert" role="alert">
+                    {{ message | safe }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END OF ALERT SECTION -->
