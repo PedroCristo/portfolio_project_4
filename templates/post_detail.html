@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{#% load crispy_forms_tags %#}
+{% load crispy_forms_tags %}
 
 <!-- POST SECTION> -->
 <section id="post-content">
@@ -85,7 +85,7 @@
                         <p>Posting as: {{ user.username }}</p>
                         <img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image">
                         <form action="" method="post">
-                            {#{ comment_form | crispy }#}
+                            {{ comment_form | crispy }}
                             {% csrf_token %}
                             <button type="submit" class="btn btn-signup btn-lg mt-5 mb-5">Submit</button>
                         </form>
