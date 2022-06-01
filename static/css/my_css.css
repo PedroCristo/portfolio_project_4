@@ -510,6 +510,27 @@ button,
 
 /*******************************
 *                              *
+*        POST PAGE             *
+*                              *
+*******************************/
+#post-content .post-content-img {
+    width: 85%;
+    display: block;
+}
+
+.enjoy-box {
+    text-align: center;
+    font-size: 3rem;
+    transform: rotate(-15deg) !important;
+    margin-top: 50px !important;
+}
+
+.enjoy-box span {
+    font-family: 'Kaushan Script', cursive;
+}
+
+/*******************************
+*                              *
 *        MEDIA QUERIES         *
 *                              *
 *******************************/

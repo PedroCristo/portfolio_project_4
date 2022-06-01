@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{#% load crispy_forms_tags %#}
+
+<!-- POST SECTION> -->
+<section id="post-content">
+    <div class="container">
+        <div class="row">
+            <hr class="hr-small">
+            <div class="col-md-10 mx-auto p-md-3">
+                <img class="post-content-img" src="{{ post.featured_image.url }}" alt="">
+                <div class="content-description">
+                    {% for cat in post.categories.all %}
+                    <h4 class="pt-3"><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                    {% endfor %}
+                    <h2>{{ post.title }}</h2>
+                    <span>
+                        {% if post.stars == 5 %}
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        {% elif post.stars == 4 %}
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        {% else%}
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-stroke"></i>
+                        {% endif %}
+                        <div class="time">
+                            <span><i class="fas fa-clock"></i> {{ post.time_to_cook }} Minutes</span>
+                        </div>
+
+                </div>
+                <div class="author-info">
+                    <span><img class="author-img" src="{{ post.author.author_picture.url }}"
+                            alt="{{ post.author }} Image"></span>
+                    <span>{{ post.author }}| </span>
+                    <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }} | </span>
+                    {% if user.is_authenticated %}
+                    <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="brn-likie">
+                            <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
+                        </button>
+                        {% else %}
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="brn-likie btn-like">
+                            <span><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
+                            {% endif %}
+                    </form>
+                    {% else %}
+                    <span class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
+                    </strong>
+                    {% endif %}
+                    <span class="text-secondary">| <i class="far fa-comments"></i>{{ num_comments }}</span>
+
+                </div>
+                <div class="post-text-content mt-3">
+                    <h4>{{ post.overview }}</h4>
+                </div>
+                <div class="ingredients-box mt-3">
+                    {{ post.content | safe }}
+                </div>
+                <div class="enjoy-box mb-5">
+                    <span>Enjoy!!</span>
+                </div>
+                <div class="post-comments">
+                    <hr class="hr-small">
+                    <div class="comment-form">
+                        <hr class="hr-small">
+                        {% if commented %}
+                        <div class="alert alert-success" role="alert" id="alert">
+                            Thanks {{ user.username }}. Your comment is awaiting approval!
+                        </div>
+                        {% else %}
+                        {% if user.is_authenticated %}
+                        <h4>Leave a Comment</h4>
+                        <p>Posting as: {{ user.username }}</p>
+                        <img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image">
+                        <form action="" method="post">
+                            {#{ comment_form | crispy }#}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-signup btn-lg mt-5 mb-5">Submit</button>
+                        </form>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                    <h4>Comments</h4>
+                    {% for comment in comments %}
+                    <div class="users-comments">
+                        <!-- <span><img class="author-img"
+                                src="{{ comment.profile.image.url }}"
+                                alt=""></span> -->
+                        <span>{{ comment.name }} | </span>
+                        <span><i class="fas fa-clock"></i> {{ comment.timestamp | timesince }}</span>
+                        <!-- <span><i class="fas fa-heart"></i>12</span> -->
+                        <div class="user-comment">
+                            <p class="user-comment-title"></p>
+                            <p class="mt-3 w-50">{{ comment.body | linebreaks }}</p>
+                        </div>
+                    </div>
+                    {% if user.is_authenticated and user.username == comment.name %}
+                    <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Delete</button>
+
+                    <!-- Modal For Comment Deletion-->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete your comment?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <a href="{% url 'delete_comment' comment_id %"><button type="submit"
+                                            class="btn btn-danger">Delete</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="hr-small">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- END OF POST SECTION> -->
+
+{% endblock content %}
