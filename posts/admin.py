@@ -8,8 +8,8 @@ class AuthorAdmin(admin.ModelAdmin):
     """
     Add fields for Author in admin panel
     """
-    list_display = ('author', 'timestamp')
-    search_fields = ['author']  
+    list_display = ('user', 'timestamp')
+    search_fields = ['user']  
 
 
 @admin.register(Post)

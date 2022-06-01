@@ -25,7 +25,7 @@ class Author(models.Model):
     """
     Model for author
     """
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     author_picture = CloudinaryField('image', default='placeholder')
 
