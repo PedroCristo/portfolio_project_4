@@ -38,6 +38,10 @@ html {
     --text-color-light: #999;
 }
 
+.color-light {
+    color: var(--text-color-light);
+}
+
 .title {
     font-size: clamp(2.5rem, 2vw, 3rem);
     text-align: center;
