@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- SUB HERO SECTION -->
+    <section id="sub-hero" class="bg-setup parallax" style="background-image:url({% static 'images/footer-bg.jpg' %});">
+        <div class="overlay"></div>
+    </section>
+    <!-- END OF SUB HERO -->
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="title">Contact Us</h2>
+        <div class="container box-shadow p-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-details">
+                        <h4>Contacto</h4>
+                        <p><i class="fas fa-phone"></i>+089 9648 84547</p>
+                        <p><i class="far fa-envelope"></i>info@tastyblog.com</p>
+                        <p><i class="fas fa-home"></i>2A Bow Lane - Dublin 8</p>
+                    </div>
+                    <div class="contact-details-img">
+                        <!-- <img src="{% static '/images/logos/logo-tasty-blog-small-removebg.png' %}" alt=""> -->
+                      {% if name %}
+                      <br>
+                        <center><h3> Thanks for your email{{ name }}</h3></center>
+                        {% else %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <!-- contact form -->
+                    <form action="{% url 'contact' %}" method="post" class="row g-3">
+                        {% csrf_token %}
+                        <div class="col-md-6">
+                            <label for="f-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="s-name" class="form-label">Surname</label>
+                            <input type="text" class="form-control" id="surname" name="surname" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" name="message" cols="40" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF CONTACT SECTION -->
+
+    {% endblock content %}

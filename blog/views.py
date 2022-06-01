@@ -78,4 +78,15 @@ def about(request):
     context = {
         'categories_list': categories
     }
-    return render(request, 'about.html', context)          
+    return render(request, 'about.html', context)   
+
+
+def contact(request):
+    """View to return the contact page"""
+    categories = Category.objects.all()
+    context = {
+        
+            'categories_list': categories
+    }
+        
+    return render(request, 'contact.html', context)

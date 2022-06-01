@@ -403,6 +403,21 @@ button,
     margin-right: 2px;
 }
 
+/*******************************
+*                              *
+*        CONTACT PAGE          *
+*                              *
+*******************************/
+#contact {
+    margin-top: 50px;
+}
+
+#contact .contact-details {
+    /* background-color: #2c78eb; */
+    background: linear-gradient(50deg, #2d557d, #9610fd, rgb(252 84 4));
+    padding: 50px 33px;
+    color: #fff;
+}
 
 
 /*******************************
