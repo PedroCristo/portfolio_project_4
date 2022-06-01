@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect, resolve_url
 from django.views import generic, View
@@ -125,4 +126,22 @@ def CategoriesView(request, cats):
     """View to return the posts filtered by categories""" 
     categories_posts = Post.objects.filter(categories__title__contains=cats)
     return render(request, 'categories_posts.html', {
-        'cats':cats.title(), 'categories_posts':categories_posts })      
+        'cats':cats.title(), 'categories_posts':categories_posts })   
+
+
+def search(request):
+    """search results"""
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        results = Post.objects.filter(
+                Q(title__contains=searched) |
+                Q(overview__icontains=searched) |
+                Q(content__icontains=searched) 
+            ).distinct()
+
+        return render(request, 'search.html', {
+            'results': results, 'searched': searched})
+    else:
+
+        return render(request, 'search.html', {})
+

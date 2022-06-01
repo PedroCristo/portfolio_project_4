@@ -9,7 +9,7 @@
     </div>
     <div class="container h-100">
         <div class="row align-items-center h-100">
-            <form action="{#% url 'search' %#}" method="POST" class="d-flex mx-auto col-md-8">
+            <form action="{% url 'search' %}" method="POST" class="d-flex mx-auto col-md-8">
                 {% csrf_token %}
                 <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>

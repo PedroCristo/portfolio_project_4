@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- SEARCHED RESULTS SECTION -->
+<section id="searched-box">
+    <div class="container box-shadow">
+        <div class="row">
+            <div class="col-md-8 m-auto text-center">
+                {% if searched %}
+                <h2 class="info-text">You Searched for <span class="text-success">"{{ searched }}"</span></h2>
+                <br>
+            </div>
+        </div>
+        <div class="searched-results">
+            {% for result in results %}
+            <a href="{{ post.get_absolute_url }}">
+            <div class="row jumbotron">
+                    <div class="col-md-6">
+                        <h4 class="sub-title mt-5">{{ result }} </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ result.featured_image.url}}" alt="{{ result }} Image">
+                    </div>
+                </div>
+            </a>
+            <hr>
+                {% empty %}
+                <div class="results-null" style="margin-top: -180px;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>We Are Sorry</h2>
+                            <p>There are no search for <span class="text-success">"{{ searched }}"</span> in the website.</p>
+                            <p>try searching again.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                {% endfor %}
+        {% else %}
+        <div class="results-empty">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="info-text">You forgot to search for a recepie. <br>Please try searching again.</h2>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- END OF SEARCHED RESULTS SECTION -->
+
+{% endblock content %}
