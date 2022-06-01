@@ -90,3 +90,19 @@ def contact(request):
     }
         
     return render(request, 'contact.html', context)
+
+
+def categories(request):
+    """View to return the categories page"""
+    categories = Category.objects.all()
+    context = {
+        'categories_list': categories
+    }
+    return render(request, 'categories.html', context)   
+
+
+def CategoriesView(request, cats): 
+    """View to return the posts filtered by categories""" 
+    categories_posts = Post.objects.filter(categories__title__contains=cats)
+    return render(request, 'categories_posts.html', {
+        'cats':cats.title(), 'categories_posts':categories_posts })      

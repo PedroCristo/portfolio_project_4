@@ -419,6 +419,30 @@ button,
     color: #fff;
 }
 
+/*******************************
+*                              *
+*       CATEGORIES PAGE        *
+*                              *
+*******************************/
+.content-categorie-blog {
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-categories .content-img:hover h3 {
+    color: var(--interative-color);
+
+}
+
+.content-categories h3 {
+    letter-spacing: 2px;
+    font-weight: 700;
+}
 
 /*******************************
 *                              *

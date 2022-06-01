@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- CATEGORIES SECTION -->
+    <section id="content" class="content content-categories">
+        <h2 class="title">Categories</h2>
+        <div class="container">
+            <div class="row">
+                {{ cats }}
+                {% for category in categories_list %}
+                <div class="col-md-4">
+                    <a href="{% url 'categories_posts' category.title %}">
+                        <div class="content-img">
+                            <div class="overlay"></div>
+                            <img src="{{ category.category_image.url}}"
+                            alt=" {{ category.title }} Image">
+                            <div class="content-categorie content-categorie-center">
+                                <h3>{{ category.title}}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </section>
+    <!-- END OF CATEGORIES SECTION -->
+
+    {% endblock content %}
