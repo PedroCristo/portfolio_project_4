@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Author, Category, Post
+from .models import Author, Category, Post, Comment, Profile
 from django_summernote.admin import SummernoteModelAdmin
+
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
@@ -29,4 +30,27 @@ class CategoryAdmin(admin.ModelAdmin):
     Add fields for Category in admin panel
     """
     list_display = ['title']
-    search_fields = ['title']    
+    search_fields = ['title']   
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """
+    Add fields for comments in admin panel
+    """
+    list_display = ('name', 'body', 'post', 'timestamp', 'approved')
+    list_filter = ('approved', 'timestamp')
+    search_fields = ('name', 'email', 'body')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)  
+
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    """
+    Add fields for comments in admin panel
+    """
+    list_display = ('user', 'image')           

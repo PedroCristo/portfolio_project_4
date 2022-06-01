@@ -10,6 +10,17 @@ STATUS = ((0, "Draft"), (1, "Published"))
 User = get_user_model()
 
 
+class Profile(models.Model):
+    """
+    Model for user profile
+    """
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    image = CloudinaryField('image', default='placeholder')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+
 class Author(models.Model):
     """
     Model for author
@@ -66,7 +77,31 @@ class Post(models.Model):
         return self.title
 
 
+    def number_of_likes(self):
+        return self.likes.count()      
+
+
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={
             'id': self.id
         })        
+
+
+class Comment(models.Model):
+    """
+    Model for post comments
+    """
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="comments")
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    body = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+    
+
+    class Meta:
+        ordering = ["timestamp"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"        
