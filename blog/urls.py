@@ -8,6 +8,7 @@ from .forms import CommentForm
 from .views import *
 
 urlpatterns = [
+    path('about/', views.about, name="about"),
     path('', views.index, name="index"),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
   

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- SUB HERO SECTION -->
+    <section id="sub-hero" class="bg-setup parallax" style="background-image:url({% static 'images/footer-bg.jpg' %});">
+        <div class="overlay"></div>
+    </section>
+    <!-- END OF SUB HERO -->
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="title">About Us</h2>
+        <div class="container box-shadow">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="mb-3 box-shadow bg-linear-gradient"
+                        src="{% static 'images/logos/logo-tasty-blog-square-removebg-2.png' %}">
+                    <img class="mb-3 box-shadow " src="{% static 'images/small-img/tasty-blog-img-1-500x300.jpg' %}">
+                </div>
+                <div class="col-md-8">
+                    <h3 class="sub-title">This blog is for anyone who loves to cook and for everyone who doesn’t.</h3>
+                    <p class="mt-3 text-justify">
+                        Our goal here is to publish recipes that you, your family and your friends
+                        will not only love but will want to make time and time again. We hope to inspire you as a home
+                        cook and boost your confidence in the kitchen. Life is meant to be enjoyed and doesn’t good food
+                        just make it more enjoyable? Please follow along and let's create something delicious!</p>
+                    <hr>
+                    <p class="text-justify">We think we have built a good food blog, so naturally, you’re going to find
+                        recipes here. But we only share the recipes we really, truly love. You won’t find anything here
+                        that we’ve never made before or would never make again. Every recipe we post has our stamp of
+                        approval.
+
+                        If we wouldn’t eat it or serve it, you won’t find it here.
+                        Step-by-step instructions with photos. When we first started cooking, we were unsure about so
+                        many things: How big should we dice the onions? How thick should we cut the vegetables? What
+                        should this look like halfway through the recipe when it looks nothing like the final photo?
+                        Helpful tips and techniques. We love learning any skill that helps us get the job done faster,
+                        easier or with a better result. That’s why we created a page of nothing but useful tips and
+                        techniques.
+
+                        Fun! Food and fun come together in this blog because everything about food should be fun: eating
+                        it, making it and even making a mess of it.</p>
+                    <div class="enjoy-box mb-5">
+                        <span>Enjoy!!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END ABOUT SECTION -->
+
+    {% endblock content %}
+    
