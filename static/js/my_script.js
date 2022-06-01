@@ -11,7 +11,7 @@ function parallax() {
     "center " + (wScroll * 0.60) + "px")
 }
 
-//Navbar CSS styles changes on scrooll
+//Navbar background and color changes on scrooll
 $(document).ready(function () {
   $(window).scroll(function () {
     if ($(document).scrollTop() > 20) {
