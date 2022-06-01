@@ -9,6 +9,7 @@ from .views import *
 
 urlpatterns = [
     path('about/', views.about, name="about"),
+    path('blog/', views.BlogPost.as_view(), name="blog"),
     path('contact/', views.contact, name="contact"),
     path('categories/', views.categories, name="categories"),
     path('categories_posts/<str:cats>', views.CategoriesView, name="categories_posts"),

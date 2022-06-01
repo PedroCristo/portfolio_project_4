@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- SUB HERO SECTION -->
+<section id="sub-hero" class="bg-setup parallax" style="background-image:url({% static 'images/footer-bg.jpg' %});">
+    <div class="overlay"></div>
+</section>
+<!-- END OF SUB HERO -->
+
+<!-- CONTENT BLOG SECTION 1-->
+<section id="blog-content-1" class="content">
+    <h2 class="title">The Blog</h2>
+    <div class="container">
+        <div class="row">
+            {% for post in post_list %}
+            {% if forloop.counter == 2%}
+            <div class="col-md-4">
+                <a href="{% url 'post_detail' post.slug %}">
+                    <div class="content-box bg-linear-gradient">
+                        <div class="content-img">
+                            <div class="overlay"></div>
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                            <div class="content-categorie">
+                                {% for cat in post.categories.all %}
+                                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="content-description">
+                            <h4>{{ post.title }}</h4>
+                            {% if post.stars == 5 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif post.stars == 4 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% else%}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                            {% endif %}
+                            <div class="time">
+                                <i class="fas fa-clock"></i>
+                                {{ post.time_to_cook }} Minutes
+                            </div>
+                            <p>{{ post.overview | slice:":100"}} . . .</p>
+                        </div>
+                        <div class="author-info">
+                            <span><img class="author-img" src="{{ post.author.profile_picture.url }}"
+                                    alt="{{ post.author }} Image"></span>
+                            <span>{{ post.author }} | </span>
+                            <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
+                            <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
+                            <span class="text-secondary">| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% else%}
+            <div class="col-md-4">
+                <a href="{% url 'post_detail' post.slug %}">
+                    <div class="content-box">
+                        <div class="content-img">
+                            <div class="overlay"></div>
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                            <div class="content-categorie">
+                                {% for cat in post.categories.all %}
+                                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="content-description">
+                            <h4>{{ post.title }}</h4>
+                            {% if post.stars == 5 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif post.stars == 4 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% else%}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                            {% endif %}
+                            <div class="time">
+                                <i class="fas fa-clock"></i>
+                                {{ post.time_to_cook }} Minutes
+                            </div>
+                            <p>{{ post.overview | slice:":100"}} . . .</p>
+                        </div>
+                        <div class="author-info">
+                            <span><img class="author-img" src="{{ post.author.profile_picture.url }}"
+                                    alt="{{ post.author }} Image"></span>
+                            <span>{{ post.author }} | </span>
+                            <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
+                            <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
+                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END OF CONTENT BLOG SECTION -->
+
+<!-- CONTENT BLOG SECTION 2 (UNDER 991px)-->
+<section id="blog-content-2" class="content">
+    <h2 class="title">The Blog</h2>
+    <div class="container">
+        <div class="row">
+            {% for post in post_list %}
+            {% if forloop.counter == 2%}
+            <div class="col-md-6">
+                <a href="{% url 'post_detail' post.slug %}">
+                    <div class="content-box bg-linear-gradient">
+                        <div class="content-img">
+                            <div class="overlay"></div>
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                            <div class="content-categorie">
+                                {% for cat in post.categories.all %}
+                                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="content-description">
+                            <h4>{{ post.title }}</h4>
+                            {% if post.stars == 5 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif post.stars == 4 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% else%}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                            {% endif %}
+                            <div class="time">
+                                <i class="fas fa-clock"></i>
+                                {{ post.time_to_cook }} Minutes
+                            </div>
+                            <p>{{ post.overview | slice:":100"}} . . .</p>
+                        </div>
+                        <div class="author-info">
+                            <span><img class="author-img" src="{{ post.author.profile_picture.url }}"
+                                    alt="{{ post.author }} Image"></span>
+                            <span>{{ post.author }} | </span>
+                            <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
+                            <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
+                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                            {% with comments.count as total_comments %}
+                                    <span class="text-secondary">| <i class="far fa-comments"></i>
+                                        {{ total_comments }}</span>
+                          {% endwith %}
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% else%}
+            <div class="col-md-6">
+                <a href="{% url 'post_detail' post.slug %}">
+                    <div class="content-box">
+                        <div class="content-img">
+                            <div class="overlay"></div>
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                            <div class="content-categorie">
+                                {% for cat in post.categories.all %}
+                                <h4><i class="fas fa-bowl-rice"></i>{{ cat }}</h4>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="content-description">
+                            <h4>{{ post.title }}</h4>
+                            {% if post.stars == 5 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif post.stars == 4 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% else%}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                            {% endif %}
+                            <div class="time">
+                                <i class="fas fa-clock"></i>
+                                {{ post.time_to_cook }} Minutes
+                            </div>
+                            <p>{{ post.overview | slice:":100"}} . . .</p>
+                        </div>
+                        <div class="author-info">
+                            <span><img class="author-img" src="{{ post.author.profile_picture.url }}"
+                                    alt="{{ post.author }} Image"></span>
+                            <span>{{ post.author }} | </span>
+                            <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
+                            <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
+                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                                <!-- {% with comments.count as total_comments %}
+                                    <span class="text-secondary">| <i class="far fa-comments"></i>
+                                        {{ total_comments }}</span>
+                                    {% endwith %} -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END OF CONTENT BLOG SECTION 2 -->
+
+<!-- PAGINATION SECTION -->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<!-- END OF PAGINATION SECTION -->
+{% endif %}
+
+{% endblock content %}

@@ -81,6 +81,14 @@ def about(request):
     return render(request, 'about.html', context)   
 
 
+class BlogPost(generic.ListView):
+    """View to return the blog page"""
+    model = Post
+    template_name = 'blog.html'
+    paginate_by = 3
+    extra_context={'categories_list': Category.objects.all()}    
+
+
 def contact(request):
     """View to return the contact page"""
     categories = Category.objects.all()
