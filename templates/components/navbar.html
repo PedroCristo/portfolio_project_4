@@ -68,14 +68,14 @@
                     </li>
                     <li><img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image"></li>
                     
-                    <a class="nav-link test-center" href="{#% url 'account_logout' %#}"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
+                    <a class="nav-link test-center" href="{% url 'account_logout' %}"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{#% url 'account_signup' %#}">| Register</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">| Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{#% url 'account_login' %#}">Login |</a>
+                    <a class="nav-link" href="{% url 'account_login' %}">Login |</a>
                 </li>
                 {% endif %}
             </ul>

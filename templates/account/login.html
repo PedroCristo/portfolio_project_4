@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<!-- LOGIN SECTION -->
+<section class="logs-pages" style="top: 0; left: 0; transform: translateY(20%); height: 70vh;">
+    <div class="container box-shadow">
+        <div class="row align-items-center">
+            <div class="col-md-6 mt-5 offset-md-2">
+                <h3>{% trans "Sign In" %}</h3>
+
+                <p>{% blocktrans %}Welcome back to the Tasty Blog. To leave a comment or like a post, please log in. If
+                    you
+                    have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+                    first.{% endblocktrans %}</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-8 mt-3 offset-md-2 pb-5">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END OF LOGIN SECTION -->
+{% endblock %}
