@@ -535,6 +535,31 @@ button,
 
 /*******************************
 *                              *
+*        PROFILE PAGE          *
+*                              *
+*******************************/
+#profile {
+    text-align: center;
+    padding: 25px 0 35px;
+}
+
+#profile .col-md-6 img{
+    width: 15%;
+    border-radius: 50%;
+}
+
+#profile .user-info-box {
+    text-align: left;
+    color: var(--text-color-light);
+}
+
+#profile .form-control {
+    width: 70% !important;
+    margin: 0 auto;
+}
+
+/*******************************
+*                              *
 *        MEDIA QUERIES         *
 *                              *
 *******************************/

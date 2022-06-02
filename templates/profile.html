@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- PROFILE SECTION -->
+<section id="profile">
+    <h2 class="title">Profile Info</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ user.profile.image.url }}" alt="{{ user.username }} Image">
+            </div>
+            <div class="user-info-box col-md-6">
+                <h3>Username: {{ user.username }}</h3>
+                <h3>Email: {{ user.email }}</h3>
+            </div>
+
+        </div>
+
+    </div>
+    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post" action=""
+        enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form | crispy }}
+        {{ profile_form | crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn-sm btn-secondary mt-3 mb-3" type="submit">Update</button>
+        <button type="button" class="btn-sm btn-danger mt-3 mb-3" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Delete</button>
+    </form>
+    <!-- Modal For Profile Deletion-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        {% csrf_token%}
+                        <p>{{ user.username }}, are you sure you want to delet your profile?</p>
+                        <a href=""><button type="button" class="btn btn-danger"
+                                data-bs-dismiss="modal"> Delete </button></a>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END OF PROFILE SECTION -->
+
+
+{% endblock content %}
