@@ -51,6 +51,6 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     """
-    Add fields for comments in admin panel
+    Add fields for profile in admin panel
     """
     list_display = ('user', 'image')           
