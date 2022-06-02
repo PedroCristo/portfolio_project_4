@@ -126,11 +126,12 @@ def CategoriesView(request, cats):
     """View to return the posts filtered by categories""" 
     categories_posts = Post.objects.filter(categories__title__contains=cats)
     return render(request, 'categories_posts.html', {
-        'cats':cats.title(), 'categories_posts':categories_posts })   
-
-
+        'cats':cats.title(), 'categories_posts':categories_posts })
+        
+         
 def search(request):
     """search results"""
+    queryset = Post.objects.all()
     if request.method == "POST":
         searched = request.POST["searched"]
         results = Post.objects.filter(
@@ -138,10 +139,12 @@ def search(request):
                 Q(overview__icontains=searched) |
                 Q(content__icontains=searched) 
             ).distinct()
+        context = {
+        'queryset': queryset
+        }
 
         return render(request, 'search.html', {
             'results': results, 'searched': searched})
     else:
 
-        return render(request, 'search.html', {})
-
+        return render(request, 'search.html', context)
