@@ -10,6 +10,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 User = get_user_model()
 
 
+
 class Profile(models.Model):
     """
     Model for user profile
