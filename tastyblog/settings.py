@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'blog',
     'posts',
+    'users.apps.UsersConfig',
 ]
 
 
