@@ -15,13 +15,13 @@
         </div>
         <div class="searched-results">
             {% for result in results %}
-            <a href="{{ post.get_absolute_url }}">
-            <div class="row jumbotron">
+            <a href="{% url 'post_detail' post.slug %}">
+            <div class="row">
                     <div class="col-md-6">
                         <h4 class="sub-title mt-5">{{ result }} </h4>
                     </div>
                     <div class="col-md-6">
-                        <img src="{{ result.featured_image.url}}" alt="{{ result }} Image">
+                        <img src="{{ result.featured_image.url }}" alt="{{ result }} Image">
                     </div>
                 </div>
             </a>
@@ -32,7 +32,7 @@
                         <div class="col-md-12">
                             <h2>We Are Sorry</h2>
                             <p>There are no search for <span class="text-success">"{{ searched }}"</span> in the website.</p>
-                            <p>try searching again.</p>
+                            <p>Try searching again.</p>
                         </div>
                     </div>
 
