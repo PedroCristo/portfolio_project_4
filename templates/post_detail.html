@@ -110,7 +110,7 @@
                     <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">Delete</button>
 
-                    <!-- Modal For Comment Deletion-->
+                    <!-- Delete comment bootstrap modal-->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -126,7 +126,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <a href="{% url 'delete_comment' comment_id %"><button type="submit"
+                                    <a href="{% url 'delete_comment' comment.id %}"><button type="submit"
                                             class="btn btn-danger">Delete</button></a>
                                         </div>
                                     </div>
