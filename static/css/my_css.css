@@ -491,6 +491,16 @@ button,
     color: #fff;
 }
 
+#contatc .email_sent_message {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#contatc .email_sent_message h4{
+    font-size: clamp(1.2rem, 2vw, 1rem);
+}
+
+
 /*******************************
 *                              *
 *       CATEGORIES PAGE        *
@@ -535,6 +545,29 @@ button,
 
 .enjoy-box span {
     font-family: 'Kaushan Script', cursive;
+}
+
+/*******************************
+*                              *
+*         LOGIN PAGES          *
+*                              *
+*******************************/
+
+.logs-pages {
+    top: 0; 
+    left: 0; 
+    height: 70vh;
+    transform: translateY(20%); height: 70vh;
+}
+
+.log-out {
+    transform: translateY(50%);
+    height: 60vh; 
+    margin-bottom: 120px;
+}
+
+.signup {
+    transform: translateY(25%);
 }
 
 /*******************************
