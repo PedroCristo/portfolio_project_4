@@ -15,27 +15,23 @@
             <div class="carousel-inner">
                 <div class="carousel-item bg-setup active"
                     style="background-image:url({% static 'images/footer-bg.jpg' %}); height: 100vh;">
-                    <!-- <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
-                        class="d-block w-100" alt="..."> -->
                     <div class="container">
                         <div class="overlay"></div>
                         <div class="carousel-caption text-start">
                             <h2>Tasty Blog</h2>
                             <p>Enjoy our recipes every day!</p>
-                            <p><a class="btn btn-lg btn-primary mt-4" href="#content">Explore</a></p>
+                            <p><a class="btn btn-lg btn-primary mt-4" href="#content" aria-label="Go to the content home section">Explore</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item bg-setup"
                     style="background-image:url({% static 'images/pasta-bg.jpg' %}); height: 100vh;">
-                    <!-- <img src="https://iamafoodblog.b-cdn.net/wp-content/uploads/2022/04/spicy-noodles-1587w-1536x1025.webp" 
-                        class="d-block w-100" alt="..."> -->
                     <div class="container">
                         <div class="overlay"></div>
                         <div class="carousel-caption text-start">
                             <h2 class="">Tasty Blog</h2>
                             <p>New Recipes and tips weekly!!</p>
-                            <p><a class="btn btn-lg btn-primary mt-4" href="#content">Explore</a></p>
+                            <p><a class="btn btn-lg btn-primary mt-4" href="#content" aria-label="Go to the content home section">Explore</a></p>
                         </div>
                     </div>
                 </div>
@@ -46,7 +42,7 @@
                         <div class="carousel-caption text-start">
                             <h2>Tasty Blog</h2>
                             <p>Best Cocktails for this summer!</p>
-                            <p><a class="btn btn-lg btn-primary mt-4" href="#content">Explore</a></p>
+                            <p><a class="btn btn-lg btn-primary mt-4" href="#content" aria-label="Go to the content home section">Explore</a></p>
                         </div>
                     </div>
                 </div>
@@ -71,7 +67,7 @@
                 {% for post in post_list %}
                 {% if forloop.counter == 1 %}
                 <div class="col-md-8">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
@@ -107,7 +103,7 @@
                 </div>
                 {% elif forloop.counter == 2 %}
                 <div class="col-md-4">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
@@ -139,7 +135,7 @@
                         </div>
                     </a>
                     {% elif forloop.counter == 3 %}
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
@@ -173,7 +169,7 @@
                 </div> 
                 {% elif forloop.counter == 4 %}
                 <div class="col-md-4">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
@@ -205,7 +201,7 @@
                         </div>
                     </a>
                     {% elif forloop.counter == 5%}
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
@@ -239,7 +235,7 @@
                 </div> 
                 {% elif forloop.counter == 6%}
                 <div class="col-md-8">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ post.featured_image.url }}"
