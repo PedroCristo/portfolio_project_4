@@ -18,7 +18,7 @@
             {% for post in post_list %}
             {% if forloop.counter == 2%}
             <div class="col-md-4">
-                <a href="{% url 'post_detail' post.slug %}">
+                <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                     <div class="content-box bg-linear-gradient">
                         <div class="content-img">
                             <div class="overlay"></div>
@@ -67,7 +67,7 @@
             </div>
             {% else%}
             <div class="col-md-4">
-                <a href="{% url 'post_detail' post.slug %}">
+                <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                     <div class="content-box">
                         <div class="content-img">
                             <div class="overlay"></div>
@@ -129,7 +129,7 @@
             {% for post in post_list %}
             {% if forloop.counter == 2%}
             <div class="col-md-6">
-                <a href="{% url 'post_detail' post.slug %}">
+                <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                     <div class="content-box bg-linear-gradient">
                         <div class="content-img">
                             <div class="overlay"></div>
@@ -182,7 +182,7 @@
             </div>
             {% else%}
             <div class="col-md-6">
-                <a href="{% url 'post_detail' post.slug %">
+                <a href="{% url 'post_detail' post.slug %" aria-label="Go to the post detail page">
                     <div class="content-box">
                         <div class="content-img">
                             <div class="overlay"></div>
@@ -245,10 +245,10 @@
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}" aria-label="Go to the blog next page" class="page-link">&laquo; PREV </a></li>
         {% endif %}
         {% if page_obj.has_next %}
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}" aria-label="Go to the blog back page" class="page-link"> NEXT &raquo;</a></li>
         {% endif %}
     </ul>
 </nav>

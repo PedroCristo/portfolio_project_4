@@ -18,7 +18,7 @@
                 {% for post in categories_posts %}
                 {% if forloop.counter == 2%}
                 <div class="col-md-4">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}"  aria-label="Go to the post detail page">
                        <div class="content-box bg-linear-gradient">
                             <div class="content-img">
                                 <div class="overlay"></div>
@@ -68,7 +68,7 @@
                 </div>
                 {% else%}
                 <div class="col-md-4">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}"  aria-label="Go to the post detail page">
                        <div class="content-box">
                             <div class="content-img">
                                 <div class="overlay"></div>
@@ -141,7 +141,7 @@
                 {% for post in categories_posts %}
                 {% if forloop.counter == 2%}
                 <div class="col-md-6">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                        <div class="content-box bg-linear-gradient">
                             <div class="content-img">
                                 <div class="overlay"></div>
@@ -191,7 +191,7 @@
                 </div>
                 {% else%}
                 <div class="col-md-6">
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
                        <div class="content-box">
                             <div class="content-img">
                                 <div class="overlay"></div>

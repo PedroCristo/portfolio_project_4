@@ -11,7 +11,7 @@
                 {{ cats }}
                 {% for category in categories_list %}
                 <div class="col-md-4">
-                    <a href="{% url 'categories_posts' category.title %}">
+                    <a href="{% url 'categories_posts' category.title %}" aria-label="Go to the category post page">
                         <div class="content-img">
                             <div class="overlay"></div>
                             <img src="{{ category.category_image.url}}"
