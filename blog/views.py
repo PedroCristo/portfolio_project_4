@@ -194,3 +194,12 @@ def search(request):
     else:
 
         return render(request, 'search.html', context)
+
+
+def delete_comment(request, comment_id):
+    """Delete comment"""
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    messages.success(request, 'Your comment was deleted successfully')
+    return HttpResponseRedirect(reverse(
+        'post_detail', args=[comment.post.slug]))        
