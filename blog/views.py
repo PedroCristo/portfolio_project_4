@@ -61,6 +61,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, f"Your comment was sent successfully and is awaiting approval!")
         else:
             comment_form = CommentForm()
         return render(
