@@ -54,7 +54,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         {% for category in categories_list %}
-                        <li><a class="dropdown-item" href="{#% url 'categories_posts' category.title %#}">{{ category.title }}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categories_posts' category.title %}">{{ category.title }}</a></li>
                         {% endfor%}
                     </ul>
                 </li>
@@ -66,8 +66,11 @@
                         <a href="/profile"><p class="nav-link">| <i class="fa fa-user" aria-hidden="true"></i>{{ user.username }}</p></a> 
                         
                     </li>
-                    <li><img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image"></li>
-                    
+                    {% if user.profile.image %}
+                    <li><img class="author-img" src="{{ user.profile.image.url }}" alt="User Image"></li>
+                    {% else %}
+                    <li><img class="author-img" src="{% static 'images/logos/logo-tasty-blog-small-removebg.png' %}" alt="User Image"></li>
+                    {% endif %}
                     <a class="nav-link test-center" href="{% url 'account_logout' %}"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
                 </li>
                 {% else %}
