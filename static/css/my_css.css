@@ -297,8 +297,15 @@ button,
     padding: 10px 38px;
 }
 
+#hero .carousel-caption h2 {
+    font-size: clamp(1.5rem, 2vw 3rem);
+    letter-spacing: 2px;
+}
+
 #hero .carousel-caption p {
     height: 50px;
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
+    letter-spacing: 2px;
 }
 
 .content .content-img img {
