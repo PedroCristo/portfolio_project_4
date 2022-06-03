@@ -1,4 +1,5 @@
 from django.db.models import Q
+from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect, resolve_url
 from django.views import generic, View
@@ -110,8 +111,27 @@ def contact(request):
         
             'categories_list': categories
     }
-        
-    return render(request, 'contact.html', context)
+
+     #Get data from the contact form
+    if request.method == 'POST':
+        name = request.POST['name']
+        surname = request.POST['surname']
+        subject = request.POST['subject']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        #Send an email
+        send_mail(
+            subject,
+            message,
+            email,
+            ['pedro.web.test@gmail.com'],
+        )
+        messages.success(request, f"Your email has been sent!")
+        return render(request, 'contact.html', {'name': name})
+    else:        
+        return render(request, 'contact.html', context)
+
 
 
 def categories(request):
