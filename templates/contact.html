@@ -21,6 +21,11 @@
                         <p><i class="far fa-envelope"></i>info@tastyblog.com</p>
                         <p><i class="fas fa-home"></i>2A Bow Lane - Dublin 8</p>
                     </div>
+                    <div class="email_sent_message alert-success">
+                        {% if name %}
+                        <h4>Thanks for your email {{ name}}.<br> We will contact you as soon as possible!</h4>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <!-- contact form -->
