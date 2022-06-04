@@ -15,7 +15,7 @@
         </div>
         <div class="searched-results">
             {% for result in results %}
-            <a href="" aria-label="Go to the post detail page">
+            <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
             <div class="row">
                     <div class="col-md-6 p-3">
                         <h4 class="sub-title">{{ result }} </h4>
