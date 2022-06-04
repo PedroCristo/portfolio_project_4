@@ -190,11 +190,10 @@ button,
     margin-bottom: 15px;
 }
 
-#searched-box .results-empty .info-text {
+#searched-box .results-empty h2 {
     line-height: 50px;
-    margin-top: 100%;
+    margin-top: 30%;
     font-size: clamp(1.5rem, 2vw, 2.1rem);
-    ;
 }
 
 #searched-box .results-null {
@@ -676,7 +675,7 @@ button,
         margin: 20px 0;
     }
     #searched-box .row {
-        padding: 15px 0 ;
+        padding: 34px 0 ;
     }
 
     #searched-box .container {
