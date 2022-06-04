@@ -192,7 +192,7 @@ button,
 
 #searched-box .results-empty .info-text {
     line-height: 50px;
-    margin-top: 25%;
+    margin-top: 100%;
     font-size: clamp(1.5rem, 2vw, 2.1rem);
     ;
 }
@@ -694,13 +694,13 @@ button,
         margin-bottom: -10% !important;
     }
 
-    #searched-box .results-empty .info-text {
-        margin-top: 6%;
-        margin-bottom: -10% !important;
+    #searched-box .results-empty h2 {
+        margin-top: 15%;
+        margin-bottom: 15% !important;
     }
 
     #searched-box .results-null {
-        margin-top: -30px !important;
+        margin-top: 15% !important;
         text-align: center;
     }
 
