@@ -624,6 +624,10 @@ button,
         bottom: 15px;
     }
 
+    .login-items {
+        bottom: -8px !important;
+    }
+
     #blog-content-1 {
         display: none;
     }
