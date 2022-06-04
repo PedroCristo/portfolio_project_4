@@ -557,9 +557,9 @@ button,
 .logs-pages {
     top: 0;
     left: 0;
+    margin-top: -100px;
     height: 70vh;
     transform: translateY(20%);
-    height: 70vh;
 }
 
 .log-out {
@@ -569,7 +569,13 @@ button,
 }
 
 .signup {
+    margin-top: -100px;
     transform: translateY(25%);
+}
+
+.signup .col-md-8{
+    padding-bottom: 80px !important;
+    margin-top: -5px !important;
 }
 
 /*******************************
