@@ -17,13 +17,14 @@
             {% for result in results %}
             <a href="" aria-label="Go to the post detail page">
             <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="sub-title mt-5">{{ result }} </h4>
+                    <div class="col-md-6 p-3">
+                        <h4 class="sub-title">{{ result }} </h4>
+                        <p  class="color-light text-center">{{ result.overview }}</p>
                     </div>
                     <div class="col-md-6">
                         <img src="{{ result.featured_image.url }}" alt="{{ result }} Image">
                     </div>
-                </div>
+            </div>
             </a>
             <hr>
                 {% empty %}
