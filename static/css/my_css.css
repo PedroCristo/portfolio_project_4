@@ -581,6 +581,12 @@ button,
     margin-top: -5px !important;
 }
 
+.logs-pages input {
+    text-align: center;
+    border-radius: 15px !important;
+    padding: 5px 15px !important;
+}
+
 /*******************************
 *                              *
 *        PROFILE PAGE          *
