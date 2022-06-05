@@ -67,7 +67,7 @@
                     {% if user.profile.image %}
                     <li><img class="author-img" src="{{ user.profile.image.url }}" alt="User Image"></li>
                     {% else %}
-                    <li><img class="author-img" src="{% static 'images/logos/logo-tasty-blog-small-removebg.png' %}" alt="User Image"></li>
+                    <li><img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image"></li>
                     {% endif %}
                     <a class="nav-link test-center" href="{% url 'account_logout' %}" aria-label="Go to the logout page"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
                 </li>

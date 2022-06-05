@@ -81,7 +81,11 @@
                         {% if user.is_authenticated %}
                         <h4>Leave a Comment</h4>
                         <p>Posting as: {{ user.username }}</p>
-                        <img class="author-img" src="{{ user.profile.image.url }}" alt="{{ user.username }} Image">
+                        {% if user.profile.image %}
+                        <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
+                        {% else %}
+                        <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
+                        {% endif %}
                         <form action="" method="post">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
@@ -91,7 +95,7 @@
                         {% endif %}
                     </div>
                     <h4>Comments:</h4>
-                    <span class="text-secondary">| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                    <span class="text-secondary"><i class="far fa-comments"></i>{{ num_comments }}</span>
                     {% for comment in comments %}
                     <div class="users-comments">
                         <!-- <span><img class="author-img"
