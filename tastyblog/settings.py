@@ -88,6 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.extras',
             ],
         },
     },
@@ -166,9 +167,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = False
+# Email config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'pedro.web.test@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+
+
+
+AUTH_PROFILE_MODULE = 'posts.Profile'
