@@ -592,8 +592,9 @@ button,
 }
 
 #profile .col-md-6 img {
-    width: 15%;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+
 }
 
 #profile .user-info-box {

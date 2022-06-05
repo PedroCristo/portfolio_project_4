@@ -10,7 +10,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ user.profile.image.url }}" alt="{{ user.username }} Image">
+                {% if user.profile.image %}
+               <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
+                {% else %}
+                <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
+                {% endif %}
             </div>
             <div class="user-info-box col-md-6">
                 <h3>Username: {{ user.username }}</h3>
