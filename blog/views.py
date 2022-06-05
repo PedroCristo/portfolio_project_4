@@ -106,18 +106,18 @@ def contact(request):
      #Get data from the contact form
     if request.method == 'POST':
         name = request.POST['name']
-        surname = request.POST['surname']
-        subject = request.POST['subject']
-        email = request.POST['email']
-        message = request.POST['message']
+        # surname = request.POST['surname']
+        # subject = request.POST['subject']
+        # email = request.POST['email']
+        # message = request.POST['message']
 
-        #Send an email
-        send_mail(
-            subject,
-            message,
-            email,
-            ['pedro.web.test@gmail.com'],
-        )
+        # # #Send an email
+        # # send_mail(
+        # #     subject,
+        # #     message,
+        # #     email,
+        # #     ['pedro.web.test@gmail.com'],
+        # # )
         messages.success(request, f"Your email has been sent!")
         return render(request, 'contact.html', {'name': name})
     else:        
