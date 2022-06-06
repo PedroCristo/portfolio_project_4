@@ -337,7 +337,7 @@ button,
 }
 
 .content .content-categorie h4 {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
 }
 
 .content .content-categorie {
