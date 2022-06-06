@@ -558,27 +558,13 @@ button,
 *******************************/
 
 .logs-pages {
-    top: 0;
-    left: 0;
-    margin-top: -100px;
-    height: 70vh;
+    margin-bottom: 250px;
     transform: translateY(20%);
 }
 
 .log-out {
-    transform: translateY(50%);
     height: 60vh;
-    margin-bottom: 120px;
-}
-
-.signup {
-    margin-top: -100px;
-    transform: translateY(25%);
-}
-
-.signup .col-md-8{
-    padding-bottom: 80px !important;
-    margin-top: -5px !important;
+    margin-bottom: 80px; 
 }
 
 .logs-pages input {
@@ -714,6 +700,11 @@ button,
         text-align: center;
         margin-top: 25px;
     }
+
+    .logs-pages {
+      
+        transform: translateY(-5%);
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -767,5 +758,11 @@ button,
     input {
         font-size: 12px;
     }
+
+    .logs-pages {
+      
+        transform: translateY(-5%);
+    }
+    
 
 }
