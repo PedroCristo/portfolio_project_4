@@ -97,7 +97,7 @@ class BlogPost(generic.ListView):
     """View to return the blog page"""
     model = Post
     template_name = 'blog.html'
-    paginate_by = 3
+    paginate_by = 6
 
 
 def contact(request):
