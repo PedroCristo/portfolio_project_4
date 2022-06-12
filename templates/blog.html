@@ -2,13 +2,7 @@
 {% load static %}
 {% block content %}
 
-
-
-<!-- SUB HERO SECTION -->
-<section id="sub-hero" class="bg-setup parallax" style="background-image:url({% static 'images/footer-bg.jpg' %});">
-    <div class="overlay"></div>
-</section>
-<!-- END OF SUB HERO -->
+{% include 'components/sub_hero_section.html' %}
 
 <!-- CONTENT BLOG SECTION 1-->
 <section id="blog-content-1" class="content">
@@ -171,7 +165,7 @@
                             <span>{{ post.author }} | </span>
                             <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
-                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                            <span>| <i class="far fa-comments"></i>{{ post.number_of_comments }}</span>
                             {% with comments.count as total_comments %}
                             <span class="text-secondary">| <i class="far fa-comments"></i>
                                 {{ total_comments }}</span>
