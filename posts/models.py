@@ -10,7 +10,6 @@ STATUS = ((0, "Draft"), (1, "Published"))
 User = get_user_model()
 
 
-
 class Profile(models.Model):
     """
     Model for user profile
@@ -41,9 +40,8 @@ class Category(models.Model):
     title = models.CharField(max_length=20)
     category_image = CloudinaryField('image', default='placeholder')
 
-
     def __str__(self):
-        return self.title        
+        return self.title
 
 
 class Post(models.Model):
@@ -55,14 +53,14 @@ class Post(models.Model):
     overview = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
-    comment_count = models.IntegerField(default = 0)
+    comment_count = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     featured_image = CloudinaryField('image', default='placeholder')
     categories = models.ManyToManyField(Category)
     time_to_cook = models.IntegerField(default=0)
     stars = models.PositiveIntegerField(
-            default=3,
-            validators=[
+        default=3,
+        validators=[
             MinValueValidator(1),
             MaxValueValidator(5)])
     status = models.IntegerField(choices=STATUS, default=0)
@@ -73,19 +71,16 @@ class Post(models.Model):
     class Meta:
         ordering = ["-timestamp"]
 
-
     def __str__(self):
         return self.title
 
-
     def number_of_likes(self):
-        return self.likes.count()      
-
+        return self.likes.count()
 
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={
             'id': self.id
-        })        
+        })
 
 
 class Comment(models.Model):
@@ -99,10 +94,9 @@ class Comment(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    
 
     class Meta:
         ordering = ["timestamp"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"        
+        return f"Comment {self.body} by {self.name}"

@@ -9,7 +9,7 @@ class AuthorAdmin(admin.ModelAdmin):
     Add fields for Author in admin panel
     """
     list_display = ('user', 'timestamp')
-    search_fields = ['user']  
+    search_fields = ['user']
 
 
 @admin.register(Post)
@@ -30,7 +30,7 @@ class CategoryAdmin(admin.ModelAdmin):
     Add fields for Category in admin panel
     """
     list_display = ['title']
-    search_fields = ['title']   
+    search_fields = ['title']
 
 
 @admin.register(Comment)
@@ -44,8 +44,7 @@ class CommentAdmin(admin.ModelAdmin):
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
-        queryset.update(approved=True)  
-
+        queryset.update(approved=True)
 
 
 @admin.register(Profile)
@@ -53,4 +52,5 @@ class ProfileAdmin(admin.ModelAdmin):
     """
     Add fields for profile in admin panel
     """
-    list_display = ('user', 'image')           
+    list_display = ('user', 'image')
+    
