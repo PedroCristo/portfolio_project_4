@@ -24,7 +24,8 @@
                 </div>
                 <div class="col-md-8">
                     <!-- contact form -->
-                    <form action="{% url 'contact' %}" method="post" class="row g-3">
+                    <form action="https://formsubmit.co/pedro.web.test@gmail.com" method="post" class="row g-3">
+                        <input type="hidden" name="_captcha" value="false">
                         {% csrf_token %}
                         <div class="col-md-6">
                             <label for="name" class="form-label">Name</label>
