@@ -693,7 +693,10 @@ button,
 
     #searched-box .results-null {
         margin-top: 15% !important;
-        text-align: center;
+    }
+
+    #searched-box .results-null .col-md-12 {
+        text-align: center !important;
     }
 
     #profile .user-info-box {
