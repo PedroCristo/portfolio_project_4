@@ -16,30 +16,29 @@
         <div class="searched-results">
             {% for post in results %}
             <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
-            <div class="row">
+                <div class="row">
                     <div class="col-md-6 p-3">
                         <h4 class="sub-title">{{ post }} </h4>
-                        <p  class="color-light text-center">{{ post.overview }}</p>
+                        <p class="color-light text-center">{{ post.overview }}</p>
                     </div>
                     <div class="col-md-6">
                         <img src="{{ post.featured_image.url }}" alt="{{ result }} Image">
                     </div>
-            </div>
+                </div>
             </a>
             <hr>
-                {% empty %}
-                <div class="results-null" style="margin-top: -180px;">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>We Are Sorry</h2>
-                            <p>There are no search for <span class="text-success">"{{ searched }}"</span> in the website.</p>
-                            <p>Try searching again.</p>
-                        </div>
+            {% empty %}
+            <div class="results-null" style="margin-top: -180px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>We Are Sorry</h2>
+                        <p>There are no search for <span class="text-success">"{{ searched }}"</span> in the website.</p>
+                        <p>Try searching again.</p>
                     </div>
-
                 </div>
             </div>
-                {% endfor %}
+        </div>
+        {% endfor %}
         {% else %}
         <div class="results-empty">
             <div class="row">
@@ -48,7 +47,9 @@
                 </div>
             </div>
         </div>
-        {% endif %}
+    </div>
+    {% endif %}
+    </div>
     </div>
 </section>
 <!-- END OF SEARCHED RESULTS SECTION -->

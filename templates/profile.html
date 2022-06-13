@@ -24,7 +24,7 @@
         </div>
 
     </div>
-    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post" action=""
+    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post" action="{% url 'profile' %}"
         enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form | crispy }}
