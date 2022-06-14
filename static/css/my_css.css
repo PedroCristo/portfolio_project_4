@@ -562,6 +562,10 @@ button,
     transform: translateY(20%);
 }
 
+.logs-pages .btn-signup {
+    margin-bottom: 20px;
+}
+
 .log-out {
     height: 60vh;
     margin-bottom: 80px; 
