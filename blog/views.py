@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
-
+from django.conf import settings
 
 def index(request):
     """View to return the index page"""
@@ -108,7 +108,7 @@ def contact(request):
     if request.method == 'POST':
         name = request.POST['name']
         name = name.capitalize()
-        # surname = request.POST['surname']
+         # surname = request.POST['surname']
         # subject = request.POST['subject']
         # email = request.POST['email']
         # message = request.POST['message']
