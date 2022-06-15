@@ -9,6 +9,7 @@ from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
 from django.conf import settings
 
+
 def index(request):
     """View to return the index page"""
     queryset = Post.objects.filter(
@@ -52,7 +53,7 @@ class PostDetail(View):
 
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-            comment_form = CommentForm(data=request.POST)
+        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -108,7 +109,7 @@ def contact(request):
     if request.method == 'POST':
         name = request.POST['name']
         name = name.capitalize()
-         # surname = request.POST['surname']
+        # surname = request.POST['surname']
         # subject = request.POST['subject']
         # email = request.POST['email']
         # message = request.POST['message']
@@ -188,4 +189,3 @@ def delete_comment(request, comment_id):
     messages.success(request, 'Your comment was deleted successfully')
     return HttpResponseRedirect(reverse(
         'post_detail', args=[comment.post.slug]))
-        
