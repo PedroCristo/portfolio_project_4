@@ -304,7 +304,7 @@ button,
 }
 
 .carousel-bg-1 {
-    background: url("/static/images/main_bg.webp");
+    background: url("./static/images/main_bg.webp");
 }
 
 .carousel-bg-2 {
