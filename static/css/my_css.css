@@ -107,11 +107,22 @@ button,
 
 .bg-setup {
     background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     transition: none;
     z-index: 1;
 }
+
+.main-bg-mobile {
+    background: url("/static/images/small-img/main_bg_mobile.webp");
+    display: none;
+}
+
+.main-bg-desktop {
+    background: url("/static/images/main_bg.webp");
+    display: block;
+}
+
 
 .bg-linear-gradient {
     background: linear-gradient(50deg, #2d557d, #9610fd, rgb(252 84 4));
@@ -181,7 +192,7 @@ button,
     padding: 25px;
 }
 
-#searched-box .searched-results .row:hover{
+#searched-box .searched-results .row:hover {
     background: rgb(228, 228, 228);
 }
 
@@ -286,6 +297,19 @@ button,
 .carousel-caption {
     top: 60%;
     transform: translateY(-50%);
+}
+
+.carousel-bg-1 {
+    background: url("/static/images/main_bg.webp");
+}
+
+.carousel-bg-2 {
+    background: url("/static/images/pasta_bg.webp");
+    position: right top;
+}
+
+.carousel-bg-3 {
+    background: url("/static/images/cocktail_bg_2.webp");
 }
 
 #hero .btn {
@@ -576,7 +600,7 @@ body.modal-open {
 
 .log-out {
     height: 60vh;
-    margin-bottom: 80px; 
+    margin-bottom: 80px;
 }
 
 .logs-pages input {
@@ -678,13 +702,14 @@ body.modal-open {
     .contact-details-img {
         text-align: center;
     }
-    
+
     #contact .contact-details {
         padding: 50px 33px;
         margin: 20px 0;
     }
+
     #searched-box .row {
-        padding: 34px 0 ;
+        padding: 34px 0;
     }
 
     #searched-box .container {
@@ -731,6 +756,24 @@ body.modal-open {
         width: 80%;
     }
 
+    .carousel-bg-1,
+    .carousel-bg-2,
+    .carousel-bg-3 {
+        display: none;
+    }
+
+    .carousel-bg-1-mobile {
+        background: url("/static/images/small-img/main_bg_mobile.webp");
+    }
+
+    .carousel-bg-2-mobile {
+        background: url("/static/images/small-img/pasta_bg_mobile.webp");
+    }
+
+    .carousel-bg-3-mobile {
+        background: url("/static/images/small-img/cocktail_bg_mobile.webp");
+    }
+
     .hr-small {
         width: 90%;
         margin: 25px auto;
@@ -760,15 +803,24 @@ body.modal-open {
     #profile .form-control {
         width: 90% !important;
     }
+
+    .main-bg-mobile {
+        display: block !important;
+    }
+
+    .main-bg-desktop {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
     #contact .container {
-        padding: 0 20px!important;
+        padding: 0 20px !important;
     }
 
     #contact .container .col-md-8 {
-       padding: 0 10px 15px ;
+        padding: 0 10px 15px;
     }
 }
 
@@ -780,6 +832,6 @@ body.modal-open {
     .logs-pages {
         transform: translateY(8%);
     }
-    
+
 
 }
