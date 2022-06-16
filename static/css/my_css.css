@@ -299,6 +299,10 @@ button,
     transform: translateY(-50%);
 }
 
+.carousel-item {
+    height: 92vh;
+}
+
 .carousel-bg-1 {
     background: url("/static/images/main_bg.webp");
 }
