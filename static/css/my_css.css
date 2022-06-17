@@ -114,12 +114,12 @@ button,
 }
 
 .main-bg-mobile {
-    background: url("/static/images/small-img/main_bg_mobile.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655455200/main_bg_mobile_xzpmip.webp");
     display: none;
 }
 
 .main-bg-desktop {
-    background: url("/static/images/main_bg.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655455191/main_bg_blmezl.webp");
     display: block;
 }
 
@@ -304,7 +304,7 @@ button,
 }
 
 .carousel-bg-1 {
-    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453637/main_bj_ir5ept.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655455191/main_bg_blmezl.webp");
 }
 
 .carousel-bg-2 {
@@ -767,7 +767,7 @@ body.modal-open {
     }
 
     .carousel-bg-1-mobile {
-        background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453656/main_bj_mobile_lrmyex.webp");
+        background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655455200/main_bg_mobile_xzpmip.webp");
     }
 
     .carousel-bg-2-mobile {
