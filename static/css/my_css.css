@@ -304,16 +304,16 @@ button,
 }
 
 .carousel-bg-1 {
-    background: url("../images/main_bg.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453637/main_bj_ir5ept.webp");
 }
 
 .carousel-bg-2 {
-    background: url("/static/images/pasta_bg.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453671/pasta-bg_z5mner.webp");
     position: right top;
 }
 
 .carousel-bg-3 {
-    background: url("/static/images/cocktail_bg_2.webp");
+    background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453671/pasta-bg_z5mner.webp");
 }
 
 #hero .btn {
@@ -767,15 +767,15 @@ body.modal-open {
     }
 
     .carousel-bg-1-mobile {
-        background: url("/static/images/small-img/main_bg_mobile.webp");
+        background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453656/main_bj_mobile_lrmyex.webp");
     }
 
     .carousel-bg-2-mobile {
-        background: url("/static/images/small-img/pasta_bg_mobile.webp");
+        background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453682/pasta-bg-mobile_saerip.webp");
     }
 
     .carousel-bg-3-mobile {
-        background: url("/static/images/small-img/cocktail_bg_mobile.webp");
+        background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1655453708/cocktail_bg_mobile_sq4zl7.webp");
     }
 
     .hr-small {
