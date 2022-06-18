@@ -16,7 +16,7 @@
         <div class="searched-results">
             {% for post in results %}
             <a href="{% url 'post_detail' post.slug %}" aria-label="Go to the post detail page">
-                <div class="row">
+                <div class="row row-results">
                     <div class="col-md-6 p-3">
                         <h4 class="sub-title">{{ post }} </h4>
                         <p class="color-light text-center">{{ post.overview }}</p>
