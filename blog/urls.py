@@ -7,6 +7,7 @@ from .forms import CommentForm
 
 from .views import *
 
+"""url paths"""
 urlpatterns = [
     path('delete_comment/<int:comment_id>', views.delete_comment,
          name='delete_comment'),
