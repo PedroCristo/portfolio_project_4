@@ -17,15 +17,17 @@
                         <p><i class="fas fa-home"></i>2A Bow Lane - Dublin 8</p>
                     </div>
                     <div>
-                        {% if name %}
+                        <!-- {% if name %}
                         <h4 class="email-sent-message alert-success">Thanks for your email {{ name }}.
                             <br> We will contact you as soon as possible!</h4>
-                        {% endif %}
+                        {% endif %} -->
+
+                        <h4 id="email_alert"> </h4>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <!-- contact form -->
-                    <form action="{% url 'contact' %}" method="post" class="row g-3">
+                    <form action="{% url 'contact' %}" onsubmit="return sendMail(this);" class="row g-3">
                         {% csrf_token %}
                         <div class="col-md-6">
                             <label for="name" class="form-label">Name</label>
