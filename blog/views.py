@@ -3,11 +3,9 @@ from django.contrib import messages
 from posts.models import *
 from .forms import CommentForm, UserUpdateForm, ProfileUpdateForm
 from django.db.models import Q
-from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
-from django.conf import settings
 
 
 def index(request):
@@ -105,27 +103,7 @@ class BlogPost(generic.ListView):
 
 def contact(request):
     """View to return the contact page"""
-
-# Get data from the contact form
-    if request.method == 'POST':
-        name = request.POST['name']
-        name = name.capitalize()
-        # surname = request.POST['surname']
-        # subject = request.POST['subject']
-        # email = request.POST['email']
-        # message = request.POST['message']
-
-        # #Send an email
-        # send_mail(
-        #     subject,
-        #     message,
-        #     email,
-        #     ['pedro.web.test@gmail.com'],
-        # )
-        messages.success(request, f"Your email has been sent!")
-        return render(request, 'contact.html', {'name': name})
-    else:
-        return render(request, 'contact.html')
+    return render(request, 'contact.html')
 
 
 def categories(request):
