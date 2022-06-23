@@ -17,7 +17,9 @@ class PostAdmin(SummernoteModelAdmin):
     """
     Add fields which will use summernote editor in admin panel
     """
-    list_display = ('title', 'slug', 'status', 'timestamp', 'author',)
+    list_display = (
+                   'title', 'slug', 'status', 'timestamp', 'author', 'featured'
+                   )
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'timestamp')
@@ -53,4 +55,3 @@ class ProfileAdmin(admin.ModelAdmin):
     Add fields for profile in admin panel
     """
     list_display = ('user', 'image')
-    
