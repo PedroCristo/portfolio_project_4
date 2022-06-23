@@ -14,7 +14,7 @@ function sendMail(contactForm) {
         },
         function(error) {
             document.getElementById('email_alert').innerHTML = `<h4 class="email-sent-message alert-danger">Sorry, something went wrong!
-            <br> Try to send an email again.</h4>`;
+            <br> Try to send the email again.</h4>`;
         }
     );
     return false;  // To block from loading a new page
