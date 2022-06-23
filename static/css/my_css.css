@@ -42,6 +42,10 @@ html {
     color: var(--text-color-light);
 }
 
+.color-white {
+    color: white;
+}
+
 .title {
     font-size: clamp(2.5rem, 2vw, 3rem);
     text-align: center;
