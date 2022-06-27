@@ -71,6 +71,8 @@ README Table Content
   - [Creating the Django app](#creating-the-django-app)
   - [Deployment of This Project](#deployment-of-this-project)
   - [Final Deployment](#final-deployment)
+  - [Forking This Project](#forking-this-project)
+  - [Cloning This Project](#cloning-this-project)
 
 ## User Experience - UX
 
@@ -526,6 +528,27 @@ App
 4. In this project the summernote editor was used so for this to work in Heroku add: X_FRAME_OPTIONS = 'SAMEORIGIN' to
    settings.py.
 5. In Heroku settings config vars delete the record for DISABLE_COLLECTSTATIC
+
+## Forking This Project
+
+* Fork this project by following the steps:
+
+1. Open [GitHub](https://github.com/PedroCristo/portfolio_project_4)
+2. Find the 'Fork' button at the top right of the page
+3. Once you click the button the fork will be in your repository
+
+## Cloning This Project
+
+* Clone this project by following the steps:
+
+1. Open [GitHub](https://github.com/PedroCristo/portfolio_project_4)
+2. You will be provided with three options to choose from, HTTPS, SSH or GitHub CLI, click the clipboard icon in order
+to copy the URL
+3. Once you click the button the fork will be in your repository
+4. Open a new terminal
+5. Change the current working directory to the location that you want the cloned directory
+6. Type 'git clone' and paste the URL copied in step 3
+7. Press 'Enter' and the project is cloned
 
 
 
