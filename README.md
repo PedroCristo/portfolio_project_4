@@ -145,3 +145,11 @@ display the word enjoy in the Post Details and About pages.
 
 * All the imagery is related to the recipes and website design. Only 7 images are static.
 The remaining imagery will be uploaded by the author to the database.
+
+### Wireframes
+
+Wireframes for this project can be located [here](WIREFRAMES.md)
+
+## Database Diagram
+
+![Database Diagrama](./assets/readme/extras/tasty_blog_database_diagrama_1.jpg)<br>
