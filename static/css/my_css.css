@@ -614,7 +614,17 @@ body.modal-open {
 
 /*******************************
 *                              *
-*         LOGS PAGES          *
+*     UPDATE COMMENT PAGE      *
+*                              *
+*******************************/
+.edit-comments form textarea{
+    padding: 25px 100px;
+    outline: none;
+}
+
+/*******************************
+*                              *
+*         LOGS PAGES           *
 *                              *
 *******************************/
 
@@ -847,6 +857,10 @@ body.modal-open {
     .main-bg-desktop {
         display: none;
     }
+
+    .edit-comments form textarea{
+        padding: 15px 35px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -868,5 +882,9 @@ body.modal-open {
         -webkit-transform: translateY(8%);
         -ms-transform: translateY(8%);
          transform: translateY(8%);
+    }
+
+    .edit-comments form textarea{
+        padding: 15px 5px;
     }
 }
