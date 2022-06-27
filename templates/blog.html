@@ -54,7 +54,7 @@
                             <span>{{ post.author }} | </span>
                             <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
-                            <span class="text-secondary">| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                            <span class="text-secondary">| <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                 </a>
@@ -103,7 +103,7 @@
                             <span>{{ post.author }} | </span>
                             <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
-                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                            <span class="text-secondary">| <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                 </a>
@@ -165,11 +165,7 @@
                             <span>{{ post.author }} | </span>
                             <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
-                            <span>| <i class="far fa-comments"></i>{{ post.number_of_comments }}</span>
-                            {% with comments.count as total_comments %}
-                            <span class="text-secondary">| <i class="far fa-comments"></i>
-                                {{ total_comments }}</span>
-                            {% endwith %}
+                            <span class="text-secondary">| <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                 </a>
@@ -218,7 +214,7 @@
                             <span>{{ post.author }} | </span>
                             <span><i class="fas fa-clock"></i>{{ post.timestamp | timesince }}| </span>
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
-                            <span>| <i class="far fa-comments"></i>{{ num_comments }}</span>
+                            <span class="text-secondary">| <i class="far fa-comments"></i></span>
                         </div>
                     </div>
                 </a>
