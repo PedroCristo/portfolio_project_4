@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- UPDATE COMMENT SECTION -->
+    <div class="edit-comments container  box-shadow">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="title">Update Comment</h1>
+                <p>Updating as: {{ user.username }}</p>
+                {% if user.profile.image %}
+                <img class="author-img mb-4" src="{{ user.profile.image.url }}" alt="User Image">
+                {% else %}
+                <img class="author-img mb-4" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
+                {% endif %}
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- END UPDATE COMMENT SECTION  -->
+
+    {% endblock content %}
