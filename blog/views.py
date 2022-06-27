@@ -6,6 +6,8 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
+from django.views.generic import UpdateView
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 def index(request):
@@ -166,6 +168,14 @@ def delete_comment(request, comment_id):
     """Delete comment"""
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
-    messages.success(request, 'Your comment was deleted successfully')
+    messages.success(request, 'The comment was deleted successfully')
     return HttpResponseRedirect(reverse(
         'post_detail', args=[comment.post.slug]))
+
+
+class EditComment(SuccessMessageMixin, UpdateView):
+    """Edite comment"""
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_message = 'The comment was successfully updated'
