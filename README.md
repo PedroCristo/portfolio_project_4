@@ -63,6 +63,11 @@ README Table Content
     - [Empty Search](#empty-search)
     - [No Search Found](#no-search-found)
   - [Admin Panel/Superuser](#admin-panelsuperuser)
+  - [Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+      - [Django Packages](#django-packages)
+    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+    - [Testing](#testing)
 
 ## User Experience - UX
 
@@ -403,6 +408,73 @@ delete the following ones:
 4. Categories
 5. Profiles
 * As admin/superuser I can also approve comments and change the status and give other permissions to the users.<br>
+
+## Technologies Used
+
+### Languages Used
+
+* [HTML 5](https://en.wikipedia.org/wiki/HTML/)
+* [CSS 3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://www.javascript.com/)
+* [Django](https://www.python.org/)
+* [Python](https://www.djangoproject.com/)
+
+#### Django Packages
+
+* [Gunicorn](https://gunicorn.org/) as the server for Heroku
+* [Cloudinary](https://cloudinary.com/) was used to host the static files and media
+* [Dj_database_url](https://pypi.org/project/dj-database-url/) to parse the database URL from the environment variables
+in Heroku
+* [Psycopg2](https://pypi.org/project/psycopg2/) as an adaptor for Python and PostgreSQL databases
+* [Summernote](https://summernote.org/) as a text editor
+* [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) for authentication, registration, account
+management
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style the forms
+
+### Frameworks - Libraries - Programs Used
+
+* [Bootstrap](https://getbootstrap.com/)
+* Was used to style the website, add responsiveness and interactivity
+* [Jquery](https://jquery.com/)
+* All the scripts were written using jquery library
+* [Git](https://git-scm.com/)
+* Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+* [GitHub](https://github.com/)
+* GitHub is used to store the project's code after being pushed from Git
+* [Heroku](https://id.heroku.com)
+* Heroku was used to deploy the live project
+* [PostgreSQL](https://www.postgresql.org/)
+* Database used through heroku.
+* [VSCode](https://code.visualstudio.com/)
+* VSCode was used to create and edit the website
+* [Lucidchart](https://lucid.app/)
+* Lucidchart was used to create the database diagram
+* [PEP8](http://pep8online.com/)
+* PEP8 was used to validate all the Python code
+* [W3C - HTML](https://validator.w3.org/)
+* W3C- HTML was used to validate all the HTML code
+* [W3C - CSS](https://jigsaw.w3.org/css-validator/)
+* W3C - CSS was used to validate the CSS code
+* [Fontawesome](https://fontawesome.com/)
+* To add icons to the website
+* [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+* To check App responsiveness and debugging
+* [Google Fonts](https://fonts.google.com/)
+* To add the 2 fonts that were used throughout the project
+* [Balsamiq](https://balsamiq.com/)
+* To build the wireframes for the project
+* [PIXLR](https://pixlr.com)
+* To convert the images to webp format
+* [CANVA](https://www.canva.com/)
+* To build the logos for the project
+* [Coolors](https://coolors.co/)
+* To build the colour palette of the project
+* [Emailjs](https://www.emailjs.com/)
+* To send emails from the contact form
+
+### Testing
+
+Testing results [here](TESTING.md)
 
 
 
