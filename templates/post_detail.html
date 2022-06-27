@@ -98,17 +98,15 @@
                     <span class="text-secondary"><i class="far fa-comments"></i>{{ num_comments }}</span>
                     {% for comment in comments %}
                     <div class="users-comments">
-                        <!-- <span><img class="author-img"
-                                src="{{ comment.profile.image.url }}"
-                                alt=""></span> -->
                         <span>{{ comment.name }} | </span>
                         <span><i class="fas fa-clock"></i> {{ comment.timestamp | timesince }}</span>
                         <div class="user-comment">
                             <p class="user-comment-title"></p>
                             <div class="mt-3 w-50">{{ comment.body | linebreaks }}</div>
                         </div>
+                        <hr class="hr-small">
                     </div>
-                    {% if user.is_authenticated and user.username == comment.name %}
+                    {% if user.is_authenticated and user.username == comment.name or user.is_superuser %}
                     <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">Delete</button>
                     <!-- Delete comment bootstrap modal-->
@@ -133,7 +131,6 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="hr-small">
                     {% endif %}
                     {% endfor %}
                 </div>
