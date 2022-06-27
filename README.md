@@ -212,7 +212,7 @@ superuser they have access to the buttons for deleting or updating comments.
 
 ### Edit Comments Page
 
-![Post Detail Page - Comments](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_edit.jpg)
+![Edit Comments Page](./assets/readme/features/tasty_blog_edit_comments_page.jpg)
 
 * On this page, users are allowed to comment, delete and edit their own post comments. The website superuser can 
   delete or update any comments on the blog without having to access the admin panel.
