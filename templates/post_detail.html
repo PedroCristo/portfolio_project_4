@@ -107,7 +107,8 @@
                         <hr class="hr-small">
                     </div>
                     {% if user.is_authenticated and user.username == comment.name or user.is_superuser %}
-                    <button type="button" class="btn-sm btn-danger" data-bs-toggle="modal"
+                    <a href="{% url 'edit_comment' comment.id %}"><button class="btn-sm btn-secondary mb-3">Edit</button></a>
+                    <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
                         data-bs-target="#staticBackdrop">Delete</button>
                     <!-- Delete comment bootstrap modal-->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -116,8 +117,6 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     Are you sure you want to delete your comment?
@@ -125,8 +124,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <a href="{% url 'delete_comment' comment.id %}"><button type="submit"
-                                            class="btn btn-danger">Delete</button></a>
+                                    <a href="{% url 'delete_comment' comment.id %}"class="btn btn-danger">Delete</a>
                                 </div>
                             </div>
                         </div>
