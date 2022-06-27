@@ -77,3 +77,34 @@ README Table Content
     - [Content](#content)
     - [Information Sources / Resources](#information-sources--resources)
   - [Special Thanks](#special-thanks)
+
+## User Experience - UX
+
+### User Stories
+
+* As a website user, I can:
+
+1. Navigate around the site and easily view the desired content.
+2. View a list of recipes and choose accordingly.
+3. Search recipes to find specific recipes.
+4. Click on a to read the recipe details.
+5. Register for an account to avail of the services offered to members.
+6. View the number of likes on a recipe thereby showing which is most popular.
+7. View comments on recipes so that I can read other users opinions.
+
+* As logged in website user, I can:
+
+1. Like/unlike recipes marking the recipes I enjoyed.
+2. Comment on recipes and give my opinion about the posts.
+3. Delete my previous comments.
+4. Manage my profile by updating my details and user image.
+5. Logout from the website.
+
+* As a website superuser, I can:
+
+1. Create and publish a new recipe.
+2. Create draft recipe posts so that come back and finished them later.
+3. Create a new user, recipes, author and categories.
+4. Delete user, recipes, author, categories and comments.
+5. Approve user's comments.
+6. Change the website permissions for a user.
