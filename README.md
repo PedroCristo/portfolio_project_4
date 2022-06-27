@@ -46,37 +46,6 @@ README Table Content
     - [User Profile Page](#user-profile-page)
     - [Navbar](#navbar)
     - [Footer](#footer)
-  - [Messages and Interaction With Users](#messages-and-interaction-with-users)
-    - [Sign up](#sign-up)
-    - [Login](#login)
-    - [Logout](#logout)
-    - [Profile Update](#profile-update)
-    - [Like Post](#like-post)
-    - [Unlike Post](#unlike-post)
-    - [Comment Post](#comment-post)
-    - [Comment Post - 2](#comment-post---2)
-    - [Delete Comment](#delete-comment)
-    - [Delete Comment - 2](#delete-comment---2)
-    - [Delete Comment - 3](#delete-comment---3)
-    - [Email Sent - Success](#email-sent---success)
-    - [Email Sent - Failed](#email-sent---failed)
-    - [Empty Search](#empty-search)
-    - [No Search Found](#no-search-found)
-  - [Admin Panel / Superuser](#admin-panel--superuser)
-  - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-      - [Django Packages](#django-packages)
-    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
-    - [Testing](#testing)
-  - [Creating the Django app](#creating-the-django-app)
-  - [Deployment of This Project](#deployment-of-this-project)
-  - [Final Deployment](#final-deployment)
-  - [Forking This Project](#forking-this-project)
-  - [Cloning This Project](#cloning-this-project)
-  - [Credits](#credits)
-    - [Content](#content)
-    - [Information Sources / Resources](#information-sources--resources)
-  - [Special Thanks](#special-thanks)
 
 ## User Experience - UX
 
@@ -153,3 +122,148 @@ Wireframes for this project can be located [here](WIREFRAMES.md)
 ## Database Diagram
 
 ![Database Diagrama](./assets/readme/extras/tasty_blog_database_diagrama_1.jpg)<br>
+
+## Features
+
+### Home Page
+
+![Home Page](./assets/readme/features/tasty_blog_home-page.jpg)
+
+* The hero image welcomes the user with a short message advertising what the website is about. These
+are 3 carousel images with a button. When the button is pressed, it brings the user down to the highlighted recipes.<br>
+
+### Home Page - Highlight Posts
+
+![Home Page - Highlight Posts](./assets/readme/features/tasty_blog_home_page_highilights-.jpg)
+
+* In the highlighted posts, users can see a selection of 6 recipes. These recipes are
+chosen by the site admin by clicking the featured box in the post database.<br>
+
+### About Page
+
+![About Page](./assets/readme/features/tasty_blog_about_page.jpg)
+
+* The About Page gives, users information about the Tasty Blog website. It introduces the users to the
+website. It also details the main purpose and the goal of the blog.<br>
+
+### Blog Page
+
+![Blog Page](./assets/readme/features/tasty_blog_page.jpg)
+
+* On the Blog Page, users have access to the full recipes posts available on the website.
+The user can choose to see the recipe detail by clicking on the recipe card.<br>
+
+### Post Detail Page - Top
+
+![Post Detail Page - Top](./assets/readme/features/tasty_blog_post_detail_1_page.jpg)
+
+* At the top of the Post Details Page, users can see the post's main
+image and they can also have access to information about the post. The
+post information includes category, recipe name, rating stars,
+time to prepare, author name and image, posted date and the
+option to like/unlike the post. It will also show how many likes and
+comments the post has received.<br>
+
+### Post Detail Page - Steps
+
+![Post Detail Page - Steps](./assets/readme/features/tasty_blog_post_detail_2_page.jpg)
+
+* In this page section, users can read the ingredients and follow the steps to complete the recipe.<br>
+
+### Post Detail Page - Comments
+
+![Post Detail Page - Comments](./assets/readme/features/tasty_blog_post_detail_comments_page.jpg)
+
+* At the bottom of this page, users can read the comments posted by
+other users. If the user is logged in, they are
+allowed to comment and delete their own post comments.
+
+### Contact Page
+
+![Contact Page](./assets/readme/features/tasty_blog_contact_page.jpg)<br><br>
+
+* The Contact Page allows users to have access to the Tasty blog
+contact details. Users can also send an email to info@tastyblog by
+using the contact form available on this page.
+
+### Categories Page
+
+![Categories Page ](./assets/readme/features/tasty_blog_categories_page.jpg)<br><br>
+
+* On the Categories Page, users can see the categories available in the blog and filter the posts by category.
+
+### Categories Results
+
+![Categories Results Page](./assets/readme/features/tasty_blog_categories_results_page.jpg)
+
+* On the Categories Results Page, users can access the post filtered by the chosen category.
+
+### Search Box
+
+![Search Box](./assets/readme/features/tasty_blog_search_page.jpg)
+
+* In this box, the users can search by inputting a keyword in the search tool. This allows the user to try and find 
+  the recipe they are looking for.
+
+### Search Results Page
+
+![Search Results Page](./assets/readme/features/tasty_blog_search_results_page.jpg)
+
+* On the Search Results Page, users can see the recipes found by their search.  When their recipe is located, the user can go to the 
+  Post Details Page by clicking on the card result.
+
+### Search Results - Input Empty
+
+![Search Results - Input Empty](./assets/readme/features/tasty_blog_search_results_empty_page.jpg)
+
+* On the Search Results Page - Input Empty, users will see this message if their search returns with an empty input.
+
+### Search Results - No Results Found
+
+![Search Results - No Results Found](./assets/readme/features/tasty_blog_search_results_null_page.jpg)
+
+* On the Search Results Page - No Results Found, users will see this message if there is nothing found for the search.
+
+### Signup Page
+
+![Signup Page](./assets/readme/features/tasty_blog_signup_page.jpg)
+
+* On the Signup Page, a new user can sign up for the Tasty Blog website by filling out and then submitting the form.
+
+### Login Page
+
+![Login Page](./assets/readme/features/tasty_blog_login_page.jpg)
+
+* On the Login Page, users can log in to the website by inputting the username and password and have access 
+  to website services for a user registered..
+
+### Logout Page
+
+![Logout Page](./assets/readme/features/tasty_blog_logout_page.jpg)
+
+* On the Logout Page, users can confirm that they wish to exit the website.
+
+### User Profile Page
+
+![User Profile Page](./assets/readme/features/tasty_blog_user_profile_page.jpg)
+
+*On the Profile Page, users have access to their own information and can update their user name, email and profile image.
+
+### Navbar
+
+![Navbar](./assets/readme/features/tasty_blog_navbar.jpg)
+
+* The navigation bar is present at the top of every page and houses all links to the various other pages.
+* The options to Register or Log in will change to the option to log out once a user has logged in.
+* Once a user has signed in, more options such as profile page and user image will be available in the navbar.
+* A search icon is nested in the navbar and once clicked it will open the search box.
+* The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
+
+![Navbar](./assets/readme/features/tasty_blog_navbar_dropdown_menu.jpg)
+* In the navbar users can access to the categories list by clicking on the dropdown menu.
+
+### Footer
+
+![Footer](./assets/readme/features/tasty_blog_footer.jpg)
+* On the website footer, users can see basic information about the blog such as contact, social media, 
+  copyright, and a quote about food recipes.
