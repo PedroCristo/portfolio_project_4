@@ -62,6 +62,7 @@ README Table Content
     - [Email Sent - Failed](#email-sent---failed)
     - [Empty Search](#empty-search)
     - [No Search Found](#no-search-found)
+  - [Admin Panel/Superuser](#admin-panelsuperuser)
 
 ## User Experience - UX
 
@@ -251,7 +252,7 @@ using the contact form available on this page.
 ![Login Page](./assets/readme/features/tasty_blog_login_page.jpg)
 
 * On the Login Page, users can log in to the website by inputting the username and password and have access 
-  to website services for a user registered..
+  to website services for a user registered.
 
 ### Logout Page
 
@@ -390,5 +391,19 @@ message saying, "You forgot to search a recipe. Please try searching again.".<br
 
 * And if there are no results matching or similar to the keyword, the user will see the following message, "We are sorry. 
   There are no searches for (keyword) on the website. Try the search again".<br>
+
+## Admin Panel/Superuser
+![No Search Found](./assets/readme/extras/tasty_blog_superuser.jpg)
+
+* On the Admin Panel, as an admin/superuser I have full access to CRUD functionality so I can view, create, edit and
+delete the following ones:
+1. Posts
+2. Comments
+3. Author
+4. Categories
+5. Profiles
+* As admin/superuser I can also approve comments and change the status and give other permissions to the users.<br>
+
+
 
 
