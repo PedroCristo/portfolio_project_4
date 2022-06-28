@@ -47,11 +47,11 @@
                     <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="brn-likie">
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}">
                             <span><i class="fas fa-heart"></i>{{ post.number_of_likes }}</span>
                         </button>
                         {% else %}
-                        <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="brn-likie btn-like">
+                        <button type="submit" name="blogpost_id" value="{{ post.slug }}">
                             <span><i class="far fa-heart"></i>{{ post.number_of_likes }}</span>
                             {% endif %}
                     </form>
@@ -86,7 +86,7 @@
                         {% else %}
                         <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
                         {% endif %}
-                        <form action="" method="post">
+                        <form method="post">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
                             <button type="submit" class="btn btn-signup btn-lg mt-5 mb-5">Submit</button>
@@ -107,12 +107,12 @@
                         <hr class="hr-small">
                     </div>
                     {% if user.is_authenticated and user.username == comment.name or user.is_superuser %}
-                    <a href="{% url 'edit_comment' comment.id %}"><button class="btn-sm btn-secondary mb-3">Edit</button></a>
-                    <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
-                        data-bs-target="#staticBackdrop">Delete</button>
+                   <a href="{% url 'edit_comment' comment.id %}" class="btn-edit btn-sm btn-secondary mb-3">Edit</a>
+                    <button type="button" class="btn-delete btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                        data-bs-target="#delete-comment">Delete</button>
                     <!-- Delete comment bootstrap modal-->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="delete-comment"
+                        tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -124,7 +124,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <a href="{% url 'delete_comment' comment.id %}"class="btn btn-danger">Delete</a>
+                                    <a href="{% url 'delete_comment' comment.id %}" class="btn btn-danger">Delete</a>
                                 </div>
                             </div>
                         </div>
