@@ -612,6 +612,15 @@ body.modal-open {
     overflow: visible !important;
 }
 
+.btn-delete {
+    width: 80px;
+}
+
+.btn-edit {
+   padding: 6px 26px;
+   margin-right: 8PX;
+}
+
 /*******************************
 *                              *
 *     UPDATE COMMENT PAGE      *
