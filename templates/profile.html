@@ -11,9 +11,10 @@
         <div class="row">
             <div class="col-md-6">
                 {% if user.profile.image %}
-               <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
+                <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
                 {% else %}
-                <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
+                <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}"
+                    alt="User Image">
                 {% endif %}
             </div>
             <div class="user-info-box col-md-6">
@@ -23,8 +24,8 @@
             </div>
         </div>
     </div>
-    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post" action="{% url 'profile' %}"
-        enctype="multipart/form-data">
+    <form class="update-profile form-control mt-5 box-shadow" id="signup_form" method="post"
+        action="{% url 'profile' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form | crispy }}
         {{ profile_form | crispy }}
@@ -33,7 +34,9 @@
         {% endif %}
         <button class="btn-sm btn-secondary mt-3 mb-3" type="submit">Update</button>
     </form>
-    <!-- Modal For Profile Deletion-->
+    {% if user.is_superuser %}
+    <a  class="btn btn-secondary mt-5" href="https://tasty-blog-portfolio-project-4.herokuapp.com/admin/" aria-label="Go to the Admin Panel">Admin Panel</a>
+    {% endif %}
 </section>
 <!-- END OF PROFILE SECTION -->
 
