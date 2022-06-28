@@ -56,9 +56,9 @@ README Table Content
     - [Unlike Post](#unlike-post)
     - [Comment Post](#comment-post)
     - [Comment Post - 2](#comment-post---2)
-    - [Delete Comment](#delete-comment)
+    - [Delete/Edit Comment](#deleteedit-comment)
+    - [Delete Comment - 1](#delete-comment---1)
     - [Delete Comment - 2](#delete-comment---2)
-    - [Delete Comment - 3](#delete-comment---3)
     - [Edit Comment](#edit-comment)
     - [Email Sent - Success](#email-sent---success)
     - [Email Sent - Failed](#email-sent---failed)
@@ -365,21 +365,21 @@ user's experience.
 * After a user submits a comment, they will see a message over the input comment saying "Thanks (username). Your 
   comment is awaiting approval! <br>
 
-### Delete Comment
+### Delete/Edit Comment
 
 ![Delete Comment](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_1.jpg)
 
-*When users are logged in to the website and they have previously posted a comment they will see the Delete 
-button at the bottom of their comments.<br>
+*When users are logged in to the website and they have previously posted a comment or if the user is a superuser they will see the 
+Delete and Edit buttons at the bottom of comments.<br>
 
-### Delete Comment - 2
+### Delete Comment - 1
 
 ![Delete Comment - 2](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_2.jpg)
 
 * If they wish to delete their comment, they can press the button Delete and a Bootstrap box model will pop up with the message 
   "Are you sure you want to delete your comment?".<br>
 
-### Delete Comment - 3
+### Delete Comment - 2
 
 ![Delete Comment - 3](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_3.jpg)
 
