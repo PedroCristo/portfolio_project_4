@@ -5,14 +5,13 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-
+<!-- LOGOUT SECTION -->
 <section class="logs-pages">
 <div class="container box-shadow">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h3>{% trans "Sign Up" %}</h3>
-
-      <p>{% blocktrans %}Welcome back to the code|star blog. Do you already have an account? Then please <a class="link"
+      <p>{% blocktrans %}Welcome back to the Tasty Blog. Do you already have an account? Then please <a class="link"
           href="{{ login_url }}">sign in</a> instead.{% endblocktrans %}</p>
     </div>
   </div>
@@ -30,5 +29,5 @@
   </div>
 </div>
 </section>
-
+<!-- LOGOUT SECTION -->
 {% endblock %}
