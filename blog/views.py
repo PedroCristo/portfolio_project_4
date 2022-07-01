@@ -28,7 +28,7 @@ def about(request):
 
 
 def contact(request):
-    """VRenders the contact page"""
+    """Renders the contact page"""
     return render(request, 'contact.html')
 
 
