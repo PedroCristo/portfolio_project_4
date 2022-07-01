@@ -61,7 +61,6 @@ class PostDetail(View):
             },
         )
 
-    @login_required
     def post(self, request, slug, *args, **kwargs):
         """Comment on the posts"""
         queryset = Post.objects.filter(status=1)
