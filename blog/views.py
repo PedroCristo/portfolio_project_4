@@ -8,6 +8,8 @@ from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
 from django.views.generic import UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
@@ -59,6 +61,7 @@ class PostDetail(View):
             },
         )
 
+    @login_required
     def post(self, request, slug, *args, **kwargs):
         """Comment on the posts"""
         queryset = Post.objects.filter(status=1)
@@ -92,7 +95,7 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
     """Like/Unlike posts"""
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -121,6 +124,7 @@ def categories_view(request, cats):
         'cats': cats.title(), 'categories_posts': categories_posts})
 
 
+@login_required
 def profile_view(request):
     """Renders the profile page"""
     if request.method == 'POST':
@@ -164,6 +168,7 @@ def search(request):
         return render(request, 'search.html', context)
 
 
+@login_required
 def delete_comment(request, comment_id):
     """Delete comment"""
     comment = get_object_or_404(Comment, id=comment_id)
@@ -173,7 +178,7 @@ def delete_comment(request, comment_id):
         'post_detail', args=[comment.post.slug]))
 
 
-class EditComment(SuccessMessageMixin, UpdateView):
+class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """Edite comment"""
     model = Comment
     template_name = 'edit_comment.html'
