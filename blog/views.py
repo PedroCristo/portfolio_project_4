@@ -178,7 +178,7 @@ def delete_comment(request, comment_id):
 
 
 class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    """Edite comment"""
+    """Edit comment"""
     model = Comment
     template_name = 'edit_comment.html'
     form_class = CommentForm
