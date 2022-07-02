@@ -96,7 +96,10 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 * Whenever a user comments on a post the Superuser has to approve it before it will be displayed on the website. This functionality is 
   working without issues.
 * When the author is posting a new recipe all the required fields have to be filled otherwise the author can't submit the post to the database.
-  
+
+### Manual Test Case
+The Test case for this project can be found [here](assets/readme/extras/tasty_blog_test_case.pdf)
+
 ## Bugs
 ### Terminal Bug
 #### Comment Model 
