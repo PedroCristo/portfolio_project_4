@@ -1,5 +1,5 @@
-## Wireframes
-Back to the [README](README.md)
+## Test Case 
+Back to the [README](README.md)<br>
 Back to the [TESTING](TESTING.md)
 
 ![Test Case](./assets/readme/test/test_case/tasty_blog_test_case_1.jpg)
@@ -8,4 +8,4 @@ Back to the [TESTING](TESTING.md)
 
 ![Test Case](./assets/readme/test/test_case/tasty_blog_test_case_3.jpg)
 
-![Test Case](./assets/readme/wi/test/test_case/tasty_blog_test_case_4.jpg)
+![Test Case](./assets/readme/test/test_case/tasty_blog_test_case_4.jpg)
