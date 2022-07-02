@@ -21,10 +21,10 @@
                 <h3>Username: {{ user.username }}</h3>
                 <h3>Email: {{ user.email }}</h3>
                 <h3>Time Logged: {{ user.last_login | timesince }}</h3>
-                {% if user.is_superuser%}
-                <h3>Status: Superuser </h3>
+                {% if user.is_superuser %}
+                <h3>Status: Superuser</h3>
                 {% else %}
-                <h3>Status: User </h3>
+                <h3>Status: User</h3>
                 {% endif %}
             </div>
         </div>
