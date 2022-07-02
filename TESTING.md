@@ -98,7 +98,7 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 * When the author is posting a new recipe all the required fields have to be filled otherwise the author can't submit the post to the database.
 
 ### Manual Test Case
-The Test case for this project can be found [here](https://docs.google.com/spreadsheets/d/100bSOz3C9ra1K0PpAldBvg7NzoyHEMZZjpIWfiHnkQU/edit#gid=0)
+The Test case for this project can be found [here](TEST_CASE.md)
 
 ## Bugs
 ### Terminal Bug
