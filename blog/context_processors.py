@@ -9,6 +9,3 @@ def extras(request):
     }
 
     return context
-
-
-
