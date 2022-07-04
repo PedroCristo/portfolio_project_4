@@ -59,6 +59,10 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 ### jQuery Validation
 ![CSS Validation Result](./assets/readme/test/tasty_blog_jquery_validator_results.jpg).
 
+### Console Results:
+![Console Result](./assets/readme/test/tasty_blog_console_results.jpg).
+* The browser console is clean, no errors are  showing.
+
 
 ## Manual Testing
 ### Frontend
