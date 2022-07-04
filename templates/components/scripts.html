@@ -10,11 +10,13 @@
 <script src="{% static 'js/sendMail.js' %}"></script>
 <script>
     // Settimeout to dismiss the alert box
-    setTimeout(function () {
-        let messages = document.getElementById('alert');
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 3500);
+    $(function () {
+        setTimeout(function () {
+            if ($(".alert").is(":visible")) {
+                $(".alert").fadeOut();
+            }
+        }, 3500)
+    });
 </script>
 </body>
 
