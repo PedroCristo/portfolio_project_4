@@ -612,6 +612,10 @@ body.modal-open {
     overflow: visible !important;
 }
 
+.modal-open[style] {
+padding-right: 0px !important;
+}
+
 .btn-delete {
     width: 80px;
 }
