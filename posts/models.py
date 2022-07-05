@@ -37,6 +37,8 @@ class Category(models.Model):
     """
     Model for category
     """
+    class Meta:
+        verbose_name_plural = 'Categories'
     title = models.CharField(max_length=20)
     category_image = CloudinaryField('image', default='placeholder')
 
@@ -77,11 +79,6 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-    def get_absolute_url(self):
-        return reverse('post_detail', kwargs={
-            'id': self.id
-        })
-
 
 class Comment(models.Model):
     """
@@ -100,7 +97,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-    
+
     def get_absolute_url(self):
         """Sets absolute URL"""
         return reverse('post_detail', args=[self.post.slug])
