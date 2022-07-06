@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
-    'blog',
     'posts',
     'users.apps.UsersConfig',
 ]
@@ -91,7 +90,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'blog.context_processors.extras',
+                'posts.context_processors.extras',
             ],
         },
     },
