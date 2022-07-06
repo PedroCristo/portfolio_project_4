@@ -488,9 +488,9 @@ button,
     color: #111;
 }
 
-.content-description p,
-.content-description h2 {
+.content-description p {
     margin-top: 15px;
+    height: 40px;
 }
 
 .content-description .fas {
