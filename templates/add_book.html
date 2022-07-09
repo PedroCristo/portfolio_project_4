@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ADD/UPDATE BOOK SECTION -->
+<div id="add_book" class="edit-comments box-shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="title">Add Book</h1>
+                <p>Add/Eddit Book as: {{ user.username }}</p>
+                {% if user.profile.image %}
+                <img class="author-img mb-4" src="{{ user.profile.image.url }}" alt="User Image">
+                {% else %}
+                <img class="author-img mb-4" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}"
+                    alt="User Image">
+                {% endif %}
+            </div>
+            <center>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <table class="w-50 table">
+                        {% for field in form %}
+                        <tr>
+                            <th>{{field.label}}</th>
+                            <td>{{ field }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
+                </form>
+            </center>
+        </div>
+    </div>
+</div>
+<!-- END ADD/UPDATE BOOK SECTION  -->
+
+{% endblock content %}

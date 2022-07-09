@@ -81,10 +81,15 @@ p {
 .far,
 .fab,
 .fa,
+.fa-solid,
 .dropdown-toggle::after {
     margin-right: 6px;
     color: var(--interative-color) !important;
     cursor: pointer;
+}
+
+.fa-solid {
+    font-size: 15px;
 }
 
 .fa-sign-out {
@@ -473,11 +478,13 @@ button,
     width: 100%;
 }
 
-#blog-content-2 {
+#blog-content-2,
+#books-content-2 {
     display: none;
 }
 
-.content-box {
+.content-box,
+.content-book {
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
     box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
     padding: 15px;
@@ -613,7 +620,7 @@ body.modal-open {
 }
 
 .modal-open[style] {
-padding-right: 0px !important;
+    padding-right: 0px !important;
 }
 
 .btn-delete {
@@ -621,8 +628,8 @@ padding-right: 0px !important;
 }
 
 .btn-edit {
-   padding: 6px 26px;
-   margin-right: 8PX;
+    padding: 6px 26px;
+    margin-right: 8PX;
 }
 
 /*******************************
@@ -630,8 +637,8 @@ padding-right: 0px !important;
 *     UPDATE COMMENT PAGE      *
 *                              *
 *******************************/
-.edit-comments form textarea{
-    padding: 25px 100px;
+.edit-comments form textarea {
+    padding: 25px;
     outline: none;
 }
 
@@ -690,6 +697,41 @@ padding-right: 0px !important;
 
 /*******************************
 *                              *
+*          Books PAGE          *
+*                              *
+*******************************/
+.book-content .sub-title {
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    margin: -25px 0 25px;
+}
+
+.book-content .title {
+    margin-bottom: -10px;
+}
+
+
+
+.content-book img {
+    height: 250px !important;
+}
+
+.content-book .content-description p {
+    margin-bottom: 100px;
+}
+
+/*******************************
+*                              *
+*     ADD/EDIT BOOKS PAGE      *
+*                              *
+*******************************/
+#add_book form {
+    margin: 0 auto;
+    display: block;
+}
+
+
+/*******************************
+*                              *
 *        MEDIA QUERIES         *
 *                              *
 *******************************/
@@ -718,12 +760,14 @@ padding-right: 0px !important;
         bottom: 5px;
     }
 
-    #blog-content-1 {
+    #blog-content-1,
+    #books-content-1 {
         display: none;
     }
 
-    #blog-content-2 {
-        display: block;
+    #blog-content-2,
+    #books-content-2 {
+        display: block !important;
     }
 
     #post-content .post-content-img {
@@ -807,6 +851,11 @@ padding-right: 0px !important;
         -ms-transform: translateY(-5%);
         transform: translateY(-5%);
     }
+
+    .edit-comments form textarea {
+        padding: 6px;
+
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -827,7 +876,7 @@ padding-right: 0px !important;
 
     .carousel-bg-2-mobile {
         background: url("https://res.cloudinary.com/dzxx8m2el/image/upload/v1657115818/pasta-bg-mobile_2_o04gns.webp");
-        
+
     }
 
     .carousel-bg-3-mobile {
@@ -871,10 +920,6 @@ padding-right: 0px !important;
     .main-bg-desktop {
         display: none;
     }
-
-    .edit-comments form textarea{
-        padding: 15px 35px;
-    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -884,6 +929,16 @@ padding-right: 0px !important;
 
     #contact .container .col-md-8 {
         padding: 0 10px 15px;
+    }
+
+    input#id_picture {
+        font-size: 12px;
+    }
+    .edit-comments form textarea {
+        width: 250px;
+    }
+    .table>:not(caption)>*>* {
+        padding: 0.6rem .5rem;
     }
 }
 
@@ -895,10 +950,10 @@ padding-right: 0px !important;
     .logs-pages {
         -webkit-transform: translateY(8%);
         -ms-transform: translateY(8%);
-         transform: translateY(8%);
+        transform: translateY(8%);
     }
 
-    .edit-comments form textarea{
+    .edit-comments form textarea {
         padding: 15px 5px;
     }
 }

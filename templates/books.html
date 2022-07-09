@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- CONTENT BOOKS SECTION 1-->
+<section id="books-content-1" class="content book-content">
+    <h2 class="title">Books</h2>
+    <h3 class="sub-title">Share with us your favourite food recipes books!!</h3>
+    <center>
+        <a href="{% url 'add_book' %}" class="btn btn-signup btn-lg mb-4">Add Book</a>
+    </center>
+    <div class="container">
+        <div class="row">
+            {% for book in books_list %}
+            <div class="col-md-4">
+                <div class="content-book">
+                    <div class="content-img">
+                        <div class="overlay"></div>
+                        <img src="{{ book.picture.url }}" alt="{{ book.title }} Image">
+                        <div class="content-categorie">
+                            <h4><i class="fa-solid fa-books"></i>Books</h4>
+                        </div>
+                    </div>
+                    <div class="content-description">
+                        <h4><i class="fa-solid fa-book"></i> {{book.title}}</h4>
+                        <h4><i class="fa-solid fa-pen"></i> {{book.author}}</h4>
+                        <a class="card-text" href="{{ book.link }}" target="_blank"><i class="fa-solid fa-globe"></i>
+                            Link</a>
+                        <p><i class="far fa-comment-dots"></i><br>{{ book.review }}</p>
+                    </div>
+                    <div class="author-info">
+                        <span>{{ book.name }} | </span>
+                        <span><i class="fas fa-clock"></i>{{ book.timestamp }}| </span>
+                    </div>
+                    <hr class="hr-small">
+                    {% if user.is_authenticated and user.username == book.name or user.is_superuser %}
+                    <center>
+                        <a href="edit_book/{{book.id}}" class="btn-edit btn-sm btn-secondary mb-3"
+                            aria-label="Go to the Edit Comments Page">Edit</a>
+                        <button type="button" class="btn-delete btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                            data-bs-target="#delete-book">Delete</button>
+                    </center>
+                    <!-- Delete book bootstrap modal-->
+                    <div class="modal fade" id="delete-book" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete your post??
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <a href="delete_book/{{book.id}}" class="btn btn-danger"
+                                        aria-label="Delete Comment">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if booked %}
+    <div class="alert alert-success" role="alert">
+        Thanks {{ user.username }}. Your comment is awaiting approval!
+    </div>
+    {% endif %}
+</section>
+<!-- END OF CONTENT BOOKS SECTION -->
+
+<!-- CONTENT BOOKS SECTION 2 (UNDER 991px)-->
+<section id="books-content-2" class="content book-content">
+    <h2 class="title">Books</h2>
+    <h3 class="sub-title">Share with us your favourite food recipes books!!</h3>
+    <div class="container">
+        <div class="row">
+            {% for book in books_list %}
+            <div class="col-md-6">
+                <div class="content-box">
+                    <div class="content-img">
+                        <div class="overlay"></div>
+                        <img src="{{ book.picture.url }}" alt="{{ book.title }} Image">
+                        <div class="content-categorie">
+                            <h4><i class="fas fa-bowl-rice"></i>Books</h4>
+                        </div>
+                    </div>
+                    <div class="content-description">
+                        <h4>{{book.title}}</h4>
+                        <h4>{{book.author}}</h4>
+                        <a class="card-text" href="{{ book.link }}" target="_blank"><i class="fas fa-clock"></i>
+                            Link</a>
+                        <p>{{ post.review }}</p>
+                    </div>
+                    <div class="author-info">
+                        <span>{{ book.name }} | </span>
+                        <span><i class="fas fa-clock"></i>{{ book.timestamp }}| </span>
+                    </div>
+                    <hr class="hr-small">
+                    {% if user.is_authenticated and user.username == book.name or user.is_superuser %}
+                    <center>
+                        <a href="edit_book/{{book.id}}" class="btn-edit btn-sm btn-secondary mb-3"
+                            aria-label="Go to the Edit Comments Page">Edit</a>
+                        <button type="button" class="btn-delete btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                            data-bs-target="#delete-book">Delete</button>
+                    </center>
+                    <!-- Delete book bootstrap modal-->
+                    <div class="modal fade" id="delete-book" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Delete Comment</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete your post??
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <a href="delete_book/{{book.id}}" class="btn btn-danger"
+                                        aria-label="Delete Comment">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- END OF CONTENT BOOKS SECTION 2 -->
+
+<!-- PAGINATION SECTION -->
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" aria-label="Go to the blog next page"
+                class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" aria-label="Go to the blog back page" class="page-link">
+                NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<!-- END OF PAGINATION SECTION -->
+{% endif %}
+
+{% endblock content %}
