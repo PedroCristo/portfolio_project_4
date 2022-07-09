@@ -709,14 +709,18 @@ body.modal-open {
     margin-bottom: -10px;
 }
 
-
-
 .content-book img {
-    height: 250px !important;
+    height: 300px !important;
+    width: 70% !important;
 }
 
 .content-book .content-description p {
     margin-bottom: 100px;
+}
+
+.fa-circle-check {
+    color: rgb(0, 255, 21) !important;
+    font-size: 25px;
 }
 
 /*******************************
