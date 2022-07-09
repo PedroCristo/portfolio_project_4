@@ -16,20 +16,18 @@
                     alt="User Image">
                 {% endif %}
             </div>
-            <center>
-                <form action="" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <table class="w-50 table">
-                        {% for field in form %}
-                        <tr>
-                            <th>{{field.label}}</th>
-                            <td>{{ field }}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
-                </form>
-            </center>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="w-50 table">
+                    {% for field in form %}
+                    <tr>
+                        <th>{{field.label}}</th>
+                        <td>{{ field }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
+            </form>
         </div>
     </div>
 </div>
