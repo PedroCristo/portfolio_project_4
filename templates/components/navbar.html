@@ -57,6 +57,11 @@
                         <li><a class="dropdown-item" href="{% url 'categories_posts' category.title %}" aria-label="Go to the each category page">{{ category.title }}</a></li>
                         {% endfor%}
                     </ul>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'books' %}" aria-label="Go to the contact page">Books</a>
+                    </li>
+                    {% endif %}
                 </li>
             </ul>
             <ul class="d-flex login-box">
