@@ -727,8 +727,8 @@ body.modal-open {
 #add_book form {
     margin: 0 auto;
     display: block;
+    width: inherit;
 }
-
 
 /*******************************
 *                              *
