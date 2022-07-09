@@ -11,19 +11,21 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
 def books(request):
-    books_list = Book.objects.all().filter(approved=True).order_by("-timestamp")
+    """Renders the books page"""
+    books_list = Book.objects.all().filter(
+        approved=True).order_by("-timestamp")
     return render(request, 'books.html', {'books_list': books_list})
 
 
 class AddBook(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-     """Add Book"""
-     model = Book
-     form_class = BookForm
-     template_name = 'add_book.html'
-     success_message = """Your post was sent successfully <br> 
-     and is awaiting approval!"""
+    """Add Book"""
+    model = Book
+    form_class = BookForm
+    template_name = 'add_book.html'
+    success_message = """Your post was sent successfully <br>
+    and is awaiting approval!"""
 
-     def form_valid(self, form):
+    def form_valid(self, form):
         form.instance.name = self.request.user
         return super().form_valid(form)
 

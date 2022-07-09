@@ -7,9 +7,9 @@ class Book(models.Model):
     """
     Model for Book
     """
-    name =  models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
     picture = CloudinaryField('image')
-    title = models.CharField(max_length = 20)
+    title = models.CharField(max_length=20)
     timestamp = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=20)
     link = models.URLField(blank=True)
@@ -21,4 +21,4 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         """Sets absolute URL"""
-        return reverse('books')  
+        return reverse('books')

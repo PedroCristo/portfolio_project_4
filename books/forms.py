@@ -3,7 +3,7 @@ from .models import Book
 
 
 class BookForm(forms.ModelForm):
-    """ 
+    """
     Form for Book
     """
     class Meta:
