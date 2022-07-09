@@ -1,5 +1,6 @@
 from django.views import generic, View
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import *
 from .forms import CommentForm, UserUpdateForm, ProfileUpdateForm
 from django.db.models import Q
@@ -7,7 +8,6 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import(
     render, get_object_or_404, reverse, redirect, resolve_url)
 from django.views.generic import UpdateView
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -77,7 +77,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.success(request, f"""
+            messages.success(request, """
             Your comment was sent successfully and is awaiting approval!""")
         else:
             comment_form = CommentForm()
@@ -100,10 +100,10 @@ class PostLike(LoginRequiredMixin, View):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-            messages.success(request, f"You have unliked this post.")
+            messages.success(request, 'You have unliked this post.')
         else:
             post.likes.add(request.user)
-            messages.success(request, f"You have liked this post, thanks!")
+            messages.success(request, 'You have liked this post, thanks!')
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
@@ -133,7 +133,7 @@ def profile_view(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, f"Your account has been updated!")
+            messages.success(request, 'Your account has been updated!')
             return redirect('profile')
     else:
         user_form = UserUpdateForm(instance=request.user)
