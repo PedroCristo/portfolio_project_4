@@ -13,7 +13,7 @@
                 {% else %}
                 <img class="author-img mb-4" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
                 {% endif %}
-                <form action="" method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
