@@ -987,4 +987,8 @@ body.modal-open {
     .edit-comments form textarea {
         padding: 15px 5px;
     }
+
+    .book-card .content-description p {
+        margin-bottom: 95px !important;
+    }
 }
