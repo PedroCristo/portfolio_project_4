@@ -11,14 +11,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
 def books(request):
-    """Renders the books page"""
+    """
+    Renders the books page
+    """
     books_list = Book.objects.all().filter(
         approved=True).order_by("-timestamp")
     return render(request, 'books.html', {'books_list': books_list})
 
 
 class AddBook(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    """Add Book"""
+    """
+    Add Book
+    """
     model = Book
     form_class = BookForm
     template_name = 'add_book.html'
@@ -31,7 +35,9 @@ class AddBook(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class EditBook(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    """Edit Book"""
+    """
+    Edit Book
+    """
     model = Book
     form_class = BookForm
     template_name = 'add_book.html'
@@ -39,7 +45,9 @@ class EditBook(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
 
 def delete_book(request, book_id):
-    """Delete Book"""
+    """
+    Delete Book
+    """
     book = get_object_or_404(Book, id=book_id)
     book.delete()
     messages.success(request, 'The post was deleted successfully')

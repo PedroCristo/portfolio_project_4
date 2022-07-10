@@ -13,7 +13,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
-    """Renders the index page"""
+    """
+    Renders the index page
+    """
     queryset = Post.objects.filter(
         featured=True, status=1).order_by('-timestamp')
     context = {
@@ -23,22 +25,30 @@ def index(request):
 
 
 def about(request):
-    """Renders the about page"""
+    """
+    Renders the about page
+    """
     return render(request, 'about.html')
 
 
 def contact(request):
-    """Renders the contact page"""
+    """
+    Renders the contact page
+    """
     return render(request, 'contact.html')
 
 
 def categories(request):
-    """Renders the categories page"""
+    """
+    Renders the categories page
+    """
     return render(request, 'categories.html')
 
 
 class PostDetail(View):
-    """Renders the post detail Page"""
+    """
+    Renders the post detail Page
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -62,7 +72,9 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        """Comment on the posts"""
+        """
+        Comment on the posts
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-timestamp")
@@ -95,7 +107,9 @@ class PostDetail(View):
 
 
 class PostLike(LoginRequiredMixin, View):
-    """Like/Unlike posts"""
+    """
+    Like/Unlike posts
+    """
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -108,7 +122,9 @@ class PostLike(LoginRequiredMixin, View):
 
 
 class BlogPost(generic.ListView):
-    """Renders the blog page"""
+    """
+    Renders the blog page
+    """
     model = Post
     queryset = Post.objects.filter(status=1)
     template_name = 'blog.html'
@@ -116,7 +132,9 @@ class BlogPost(generic.ListView):
 
 
 def categories_view(request, cats):
-    """Renders the posts filtered by categories"""
+    """
+    Renders the posts filtered by categories
+    """
     categories_posts = Post.objects.filter(
         categories__title__contains=cats, status=1)
     return render(request, 'categories_posts.html', {
@@ -125,7 +143,9 @@ def categories_view(request, cats):
 
 @login_required
 def profile_view(request):
-    """Renders the profile page"""
+    """
+    Renders the profile page
+    """
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(
@@ -147,7 +167,9 @@ def profile_view(request):
 
 
 def search(request):
-    """search results"""
+    """
+    search results
+    """
     queryset = Post.objects.all()
     if request.method == "POST":
         searched = request.POST["searched"]
@@ -169,7 +191,9 @@ def search(request):
 
 @login_required
 def delete_comment(request, comment_id):
-    """Delete comment"""
+    """
+    Delete comment
+    """
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     messages.success(request, 'The comment was deleted successfully')
@@ -178,7 +202,9 @@ def delete_comment(request, comment_id):
 
 
 class EditComment(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    """Edit comment"""
+    """
+    Edit comment
+    """
     model = Comment
     template_name = 'edit_comment.html'
     form_class = CommentForm

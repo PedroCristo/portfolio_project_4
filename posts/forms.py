@@ -4,14 +4,18 @@ from django import forms
 
 
 class CommentForm(forms.ModelForm):
-    """Form for post comments"""
+    """
+    Form for post comments
+    """
     class Meta:
         model = Comment
         fields = ('body', )
 
 
 class UserUpdateForm(forms.ModelForm):
-    """Form for profile name update"""
+    """
+    Form for profile name update
+    """
     email = forms.EmailField()
 
     class Meta:
@@ -20,7 +24,9 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    """Form for profile image update"""
+    """
+    Form for profile image update
+    """
     class Meta:
         model = Profile
         fields = ['image', ]
