@@ -14,13 +14,17 @@ were entered into the online checker and no errors were found in any of the cust
 * [models.py](./assets/readme/test/pep8/posts_pep8_models.jpg)
 * [apps.py](./assets/readme/test/pep8/blog_pep8_apps.jpg)
 * [forms.py](./assets/readme/test/pep8/blog_pep8_forms.jpg)
+* [signals.py](./assets/readme/test/pep8/blog_pep8_signals.jpg)
 * [urls.py](./assets/readme/test/pep8/blog_pep8_urls.jpg)
 * [views.py](./assets/readme/test/pep8/blog_pep8_views.jpg)
 * [context_processors.py](./assets/readme/test/pep8/blog_pep8_context_processor.jpg)
 
-#### Tasty Blog - Users
-* [apps.py](./assets/readme/test/pep8/users_pep8_apps.jpg)
-* [signals.py](./assets/readme/test/pep8/users_pep8_signals.jpg)
+#### Tasty Blog - Books
+* [admin.py](./assets/readme/test/pep8/books_pep8_admin.jpg)
+* [forms.py](./assets/readme/test/pep8/books_pep8_forms.jpg)
+* [models.py](./assets/readme/test/pep8/books_pep8_models.jpg)
+* [urls.py](./assets/readme/test/pep8/books_pep8_urls.jpg)
+* [views.py](./assets/readme/test/pep8/books_pep8_views.jpg)
 
 #### Tasty Blog - Tastyblog
 * [asgi.py](./assets/readme/test/pep8/tastyblog_pep8_asgi.jpg)
@@ -61,7 +65,6 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 ![Console Result](./assets/readme/test/tasty_blog_console_results.jpg).
 * The browser console is clean, no errors are  showing.
 
-
 ## Manual Testing
 ### Frontend
 * The Signup, Login and Logout system has no issues and is working accordingly. It shows the right 
@@ -91,11 +94,13 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 * The functionality to update a message, previously sent by the user or by the superuser, is 
   working without issues. A new page is open, to update the comment when the button edit is 
   pressed. Once the action is complete, the interactive message is displayed at the top of the page. 
+* On the Books Page, the CRUD functionality is working without issues. Logged in users can create a new 
+  post such as update or delete their own posts, also any post can be updated or deleted on this page by the Superuser.  
 
 ### Backend/Admin Panel
 * I have tested the Admin Panel repeatedly since the start of the project development. All the models are working without issues.  
   I have created, deleted, and updated data in all models without errors. The models have the behavior expected for what they were built for.
-* Whenever a user comments on a post the Superuser has to approve it before it will be displayed on the website. This functionality is 
+* Whenever a user comments on a post or submits a book post the Superuser has to approve it before it will be displayed on the website. This functionality is 
   working without issues.
 * When the author is posting a new recipe all the required fields have to be filled otherwise the author can't submit the post to the database.
 

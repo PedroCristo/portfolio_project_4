@@ -28,3 +28,7 @@ Back to the [README](README.md)
 ![Profile Page](./assets/readme/wireframes/profile_page.png)
 
 ![Edit Comments Page](./assets/readme/wireframes/edit_comments.png)
+
+![Books Page](./assets/readme/wireframes/books_page.png)
+
+![Add/Edit Books Page](./assets/readme/wireframes/add_edit_books_page.png)

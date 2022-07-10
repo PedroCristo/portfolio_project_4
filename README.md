@@ -3,8 +3,9 @@
 Project milestone 4 for Code Institute Full-stack development program: Django Framework.
 This project is a Full Stack website built using the Django framework. Tasty Blog is a recipe
 book where users can look or search for a recipe to prepare. When the user is logged in they can
-also like/unlike a post, comment on a post and upload or update their user image and details. As
-a user admin, they can post new recipes, approve comments and add new authors.
+also like/unlike a post, comment on a post, share their favorite cookbooks by adding a post on the 
+Books Page and upload or update their user image and details. As a user admin, they can post new 
+recipes, approve comments and add new authors.
 
 [Live Project Here](https://tasty-blog-portfolio-project-4.herokuapp.com/)
 
@@ -37,6 +38,8 @@ README Table Content
     - [Contact Page](#contact-page)
     - [Categories Page](#categories-page)
     - [Categories Results](#categories-results)
+    - [Books Page](#books-page)
+    - [Add/Edit Books Page](#addedit-books-page)
     - [Search Box](#search-box)
     - [Search Results Page](#search-results-page)
     - [Search Results - Input Empty](#search-results---input-empty)
@@ -62,6 +65,10 @@ README Table Content
     - [Edit Comment](#edit-comment)
     - [Email Sent - Success](#email-sent---success)
     - [Email Sent - Failed](#email-sent---failed)
+    - [Add Book](#add-book)
+    - [Edit Book](#edit-book)
+    - [Delete Book 1](#delete-book-1)
+    - [Delete Book 2](#delete-book-2)
     - [Empty Search](#empty-search)
     - [No Search Found](#no-search-found)
   - [Admin Panel/Superuser](#admin-panelsuperuser)
@@ -100,7 +107,10 @@ README Table Content
 2. Comment on recipes and give my opinion about the posts.
 3. Delete my previous comments.
 4. Manage my profile by updating my details and user image.
-5. Logout from the website.
+5. Share my favorites cookbooks by posting them on the Books Page.
+6. Edit my favorite cookbook posted previously.
+7. Delete my favorite cookbook posted previously
+8. Logout from the website.
 
 * As a website superuser, I can:
 
@@ -109,7 +119,9 @@ README Table Content
 3. Create a new user, recipes, author and categories.
 4. Delete user, recipes, author, categories and comments.
 5. Approve user's comments.
-6. Change the website permissions for a user.
+6. Edit user's favorite cookbook posted previously
+7. Delete user's favorite cookbook posted previously
+8. Change the website permissions for a user.
 
 ### Agile Methodology
 
@@ -236,6 +248,19 @@ using the contact form available on this page.
 ![Categories Results Page](./assets/readme/features/tasty_blog_categories_results_page.jpg)
 
 * On the Categories Results Page, users can access the post filtered by the chosen category.
+  
+### Books Page
+
+![Books Page](./assets/readme/features/tasty_blog_books_page.jpg)
+
+*On this page, registered users can see favorite books posted by other users and if they had already
+ published a post they are allowed to edit or delete their own posts.
+
+### Add/Edit Books Page
+
+![Add/Edit Book Page](./assets/readme/features/tasty_blog_add_book_page.jpg)
+
+On this page, registered users can fill out the form to add or edit a post with their favorite cookbooks.
 
 ### Search Box
 
@@ -390,8 +415,7 @@ Delete and Edit buttons at the bottom of comments.<br>
 
 ![Edit Comment](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_edit.jpg)
 
-* After pressing the Update, users will see a message on the 
-  top of the page, "The comment was successfully updated".<br>
+* After pressing the Update, users will see a message on the top of the page, "The comment was successfully updated".<br>
 
 ### Email Sent - Success
 
@@ -406,6 +430,32 @@ Delete and Edit buttons at the bottom of comments.<br>
 
 * If the email was not submitted successfully, users will see the message, "Sorry, something went wrong! 
   Try to submit the email again".<br>
+
+### Add Book
+
+![Add Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_add_book.jpg)  
+
+*When users are logged in to the website they can publish a post with a favorite cookbook and after they submit the 
+post they will see a message at the top of the page saying "Your post was sent successfully and is awaiting approval".<br>
+
+### Edit Book
+
+![Edit Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_edit.jpg)  
+*When users are logged in to the website they can edit their own posts published previously and they will see the message 
+"The post was successfully updated" after pressing the Submit button.<br>
+
+### Delete Book 1 
+
+![Delete Book 1](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_delete_2.jpg)
+When users are logged in to the website and they wish to delete their posts, they can press the button Delete and a 
+Bootstrap box model will pop up with the message "Are you sure you want to delete your post?".<br>  
+
+### Delete Book 2
+
+![Delete Book 2](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_delete.jpg)  
+
+* After pressing the Delete button again inside the Bootstrap box model they will see a message on the 
+  top of the page, "Your post was deleted successfully".<br>
 
 ### Empty Search
 
@@ -574,6 +624,7 @@ to copy the URL
 ### Content
 
 * All food recipies were taken from [BBC Goodfood](https://www.bbcgoodfood.com/recipes)
+* The books content and images were taken from[Eason](https://www.easons.com/)
 * The images were taken from [Unsplash](https://unsplash.com/)
 * The Tasty Blog logos and favicon are my own designed and build
 
