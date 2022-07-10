@@ -483,8 +483,7 @@ button,
     display: none;
 }
 
-.content-box,
-.content-book {
+.content-box {
     -webkit-box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
     box-shadow: rgb(1 1 1 / 20%) 1px 10px 10px -1px;
     padding: 15px;
@@ -705,22 +704,41 @@ body.modal-open {
     margin: -25px 0 25px;
 }
 
+.book-card {
+    -webkit-box-shadow: rgb(1 1 1 / 50%) 1px 10px 10px -1px;
+    box-shadow: rgb(1 1 1 / 50%) 1px 10px 10px -1px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
 .book-content .title {
     margin-bottom: -10px;
 }
 
-.content-book img {
-    height: 300px !important;
-    width: 70% !important;
+.book-card img {
+    height: 250px!important;
+    width: 60%!important;
+    margin: 0 auto;
 }
 
-.content-book .content-description p {
-    margin-bottom: 100px;
+.book-card .content-img {
+ position: relative;
+ margin-bottom: 15px;
+ background: rgb(199, 235, 240);
+ padding: 20px 0 10px;
+ border-radius: 5px;
+}
+
+.book-card .content-description p {
+    margin-bottom: 110px !important;
 }
 
 .fa-circle-check {
     color: rgb(0, 255, 21) !important;
-    font-size: 25px;
+    font-size: 40px;
+    left: 0;
+    bottom:-15px;
+    position: absolute;
 }
 
 /*******************************
@@ -739,6 +757,12 @@ body.modal-open {
 *        MEDIA QUERIES         *
 *                              *
 *******************************/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .book-card .content-description p {
+        margin-bottom: 130px !important;
+    }
+}
+
 @media only screen and (max-width: 991px) {
 
     .navbar {
@@ -799,7 +823,7 @@ body.modal-open {
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 767px) {
     .content .col-md-8 img {
         margin-bottom: 15px;
     }
@@ -858,7 +882,10 @@ body.modal-open {
 
     .edit-comments form textarea {
         padding: 6px;
+    }
 
+    .book-card .content-description p {
+        margin-bottom: 75px !important;
     }
 }
 
