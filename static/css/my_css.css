@@ -709,6 +709,7 @@ body.modal-open {
     box-shadow: rgb(1 1 1 / 50%) 1px 10px 10px -1px;
     padding: 15px;
     margin-bottom: 25px;
+    height: 700px;
 }
 
 .book-content .title {
