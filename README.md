@@ -624,7 +624,7 @@ to copy the URL
 ### Content
 
 * All food recipies were taken from [BBC Goodfood](https://www.bbcgoodfood.com/recipes)
-* The books content and images were taken from [Eason](https://www.easons.com/)
+* The books info and images were taken from [Eason](https://www.easons.com/)
 * The images were taken from [Unsplash](https://unsplash.com/)
 * The Tasty Blog logos and favicon are my own designed and build
 
