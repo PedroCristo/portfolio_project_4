@@ -26,7 +26,7 @@
                         <p><i class="far fa-comment-dots"></i><br>{{ book.review }}</p>
                     </div>
                     <div class="author-info">
-                        <span><i class="fa-solid fa-at"></i>{{ book.name }} | </span>
+                        <span><i class="fa-solid fa-at"></i>{{ book.name | slice:":10" }} | </span>
                         <span><i class="fas fa-clock"></i>{{ book.timestamp }}</span>
                     </div>
                     <hr class="hr-small">
@@ -89,7 +89,7 @@
                         <p><i class="far fa-comment-dots"></i><br>{{ book.review }}</p>
                     </div>
                     <div class="author-info">
-                        <span><i class="fa-solid fa-at"></i>{{ book.name }} | </span>
+                        <span><i class="fa-solid fa-at"></i>{{ book.name | slice:":10" }} | </span>
                         <span><i class="fas fa-clock"></i>{{ book.timestamp }}</span>
                     </div>
                     <hr class="hr-small">

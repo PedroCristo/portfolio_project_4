@@ -18,7 +18,7 @@
                 {% endif %}
             </div>
             <div class="user-info-box col-md-6">
-                <h3>Username: {{ user.username }}</h3>
+                <h3>Username: {{ user.username | slice:":15" }}</h3>
                 <h3>Email: {{ user.email }}</h3>
                 <h3>Time Logged: {{ user.last_login | timesince }}</h3>
                 {% if user.is_superuser %}

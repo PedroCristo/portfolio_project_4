@@ -80,7 +80,7 @@
                         {% else %}
                         {% if user.is_authenticated %}
                         <h4>Leave a Comment</h4>
-                        <p>Posting as: {{ user.username }}</p>
+                        <p>Posting as: {{ user.username | slice:":10"}}</p>
                         {% if user.profile.image %}
                         <img class="author-img" src="{{ user.profile.image.url }}" alt="User Image">
                         {% else %}
@@ -99,7 +99,7 @@
                     <span class="text-secondary"><i class="far fa-comments"></i>{{ num_comments }}</span>
                     {% for comment in comments %}
                     <div class="users-comments">
-                        <span>{{ comment.name }} | </span>
+                        <span>{{ comment.name | slice:":10"}} | </span>
                         <span><i class="fas fa-clock"></i> {{ comment.timestamp | timesince }}</span>
                         <div class="user-comment">
                             <p class="user-comment-title"></p>
