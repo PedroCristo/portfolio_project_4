@@ -12,12 +12,12 @@ were entered into the online checker and no errors were found in any of the cust
 * [admin.py](./assets/readme/test/pep8/posts_pep8_admin.jpg)
 * [apps.py](./assets/readme/test/pep8/posts_pep8_apps.jpg)
 * [models.py](./assets/readme/test/pep8/posts_pep8_models.jpg)
-* [apps.py](./assets/readme/test/pep8/blog_pep8_apps.jpg)
-* [forms.py](./assets/readme/test/pep8/blog_pep8_forms.jpg)
-* [signals.py](./assets/readme/test/pep8/blog_pep8_signals.jpg)
-* [urls.py](./assets/readme/test/pep8/blog_pep8_urls.jpg)
-* [views.py](./assets/readme/test/pep8/blog_pep8_views.jpg)
-* [context_processors.py](./assets/readme/test/pep8/blog_pep8_context_processor.jpg)
+* [apps.py](./assets/readme/test/pep8/posts_pep8_apps.jpg)
+* [forms.py](./assets/readme/test/pep8/posts_pep8_forms.jpg)
+* [signals.py](./assets/readme/test/pep8/posts_pep8_signals.jpg)
+* [urls.py](./assets/readme/test/pep8/posts_pep8_urls.jpg)
+* [views.py](./assets/readme/test/pep8/posts_pep8_views.jpg)
+* [context_processors.py](./assets/readme/test/pep8/posts_pep8_context_processor.jpg)
 
 #### Tasty Blog - Books
 * [admin.py](./assets/readme/test/pep8/books_pep8_admin.jpg)
