@@ -556,9 +556,9 @@ Testing results [here](TESTING.md)
 2. Click on Use This Template
 3. Once the template is available in your repository click on Gitpod
 4. When the image for the template and the Gitpod are ready open a new terminal to start a new Django App
-5. Install Django and gunicorn: pip3 install django gunicorn
-6. Install supporting database libraries dj_database_url and psycopg2 library: pip3 install dj_database_url psycopg2
-7. Create file for requirements: in the terminal window type pip freeze --local > requirements.txt
+5. Install Django and gunicorn: `pip3 install django gunicorn`
+6. Install supporting database libraries dj_database_url and psycopg2 library: `pip3 install dj_database_url psycopg2`
+7. Create file for requirements: in the terminal window type `pip freeze --local > requirements.txt`
 8. Create project: in the terminal window type django-admin startproject your_project_name
 9. Create app: in the terminal window type python3 manage.py startapp your_app_name
 10. Add app to the list of installed apps in settings.py file: you_app_name
@@ -578,8 +578,8 @@ App
 5. Click on the Create App button
 6. Click in resources and select Heroku Postgres database
 7. Click Reveal Config Vars and add a new record with SECRET_KEY
-8. Click Reveal Config Vars and add a new record with the CLOUDINARY_URL
-9. Click Reveal Config Vars and add a new record with the DISABLE_COLLECTSTATIC = 1
+8. Click Reveal Config Vars and add a new record with the `CLOUDINARY_URL`
+9. Click Reveal Config Vars and add a new record with the `DISABLE_COLLECTSTATIC = 1`
 10. The next page is the project’s Deploy Tab. Click on the Settings Tab and scroll down to Config Vars
 11. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes
 12. Scroll to the top of the page and choose the Deploy tab
@@ -591,12 +591,12 @@ App
 
 ## Final Deployment 
 
-1. Create a runtime.txt "python-3.8.13"
-2. Create a Procfile "web: gunicorn your_project_name.wsgi"
-3. When development is complete change the debug setting to: DEBUG = False in settings.py
-4. In this project the summernote editor was used so for this to work in Heroku add: X_FRAME_OPTIONS = 'SAMEORIGIN' to
+1. Create a runtime.txt `python-3.8.13`
+2. Create a Procfile `web: gunicorn your_project_name.wsgi`
+3. When development is complete change the debug setting to: `DEBUG = False` in settings.py
+4. In this project the summernote editor was used so for this to work in Heroku add: `X_FRAME_OPTIONS = SAMEORIGIN `to
    settings.py.
-5. In Heroku settings, delete the config vars for DISABLE_COLLECTSTATIC = 1
+5. In Heroku settings, delete the config vars for `DISABLE_COLLECTSTATIC = 1`
 
 ## Forking This Project
 
