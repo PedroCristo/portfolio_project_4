@@ -481,7 +481,9 @@ delete the following ones:
 3. Author
 4. Categories
 5. Profiles
-* As admin/superuser I can also approve comments and change the status and give other permissions to the users.<br>
+6. Books
+   
+* As admin/superuser I can also approve comments, apporove posts and change the status and give other permissions to the users.<br>
 
 ## Technologies Used
 
