@@ -7,8 +7,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
+                {% if book %}
+                <h1 class="title">Edit Book</h1>
+                <p>Edit Book as: {{ user.username | slice:":10" }}</p>
+                {% else %}
                 <h1 class="title">Add Book</h1>
-                <p>Add/Edit Book as: {{ user.username | slice:":10" }}</p>
+                <p>Add Book as: {{ user.username | slice:":10" }}</p>
+                {% endif %}
                 {% if user.profile.image %}
                 <img class="author-img mb-4" src="{{ user.profile.image.url }}" alt="User Image">
                 {% else %}
