@@ -6,8 +6,8 @@
     <div class="edit-comments container box-shadow">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="title">Update Comment</h1>
-                <p>Updating as: {{ user.username | slice:":10" }}</p>
+                <h1 class="title">Edit Comment</h1>
+                <p>Edit comment as: {{ user.username | slice:":10" }}</p>
                 {% if user.profile.image %}
                 <img class="author-img mb-4" src="{{ user.profile.image.url }}" alt="User Image">
                 {% else %}
@@ -16,7 +16,7 @@
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Update</button>
+                    <button class="btn btn-secondary right mb-4" type="submit" value="Save">Submit</button>
                 </form>
             </div>
         </div>
