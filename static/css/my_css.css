@@ -789,9 +789,10 @@ body.modal-open {
         box-shadow: rgb(1 1 1 / 50%) 1px 10px 10px -1px;
     }
 
-    .login-box {
+    .login-box,
+    .logout-box  {
         position: absolute;
-        right: 5px;
+        right: 25px;
         bottom: 5px;
     }
 
