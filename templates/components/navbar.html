@@ -1,5 +1,6 @@
 {% load static %}
 
+
  <!-- SEARCH BOX SECTION -->
  <div id="search-box">
     <div class="search-nav">
@@ -62,10 +63,10 @@
                     </li>
                     {% endif %}
             </ul>
+            {% if user.is_authenticated %}
             <ul class="d-flex login-box">
                 <!-- User authentication -->
-                {% if user.is_authenticated %}
-                <li class="nav-item display-inline"></li>
+                <li class="nav-item display-inline">
                     <li><a href="/profile"><p class="nav-link">| <i class="fa fa-user" aria-hidden="true"></i>{{ user.username | slice:":10" }}</p></a></li>
                     {% if user.profile.image %}
                     <li><img class="author-img" src="{{ user.profile.image.url }}" alt="User Image"></li>
@@ -75,15 +76,18 @@
                     <li>
                         <a class="nav-link test-center" href="{% url 'account_logout' %}" aria-label="Go to the logout page"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i>|</a>
                     </li>
+                </ul>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}" aria-label="Go to the signup page">| Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}" aria-label="Go to the login page">Login |</a>
-                </li>
-                {% endif %}
-            </ul>
+                <ul class="d-flex logout-box">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}" aria-label="Go to the signup page">| Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}" aria-label="Go to the login page">Login |</a>
+                    </li>
+                </ul>
+                    {% endif %}
+            
             <p id="search-box-button" class="btn"><i class="fas fa-search"></i></p>
         </div>
     </div>
