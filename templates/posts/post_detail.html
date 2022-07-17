@@ -87,8 +87,8 @@
                         <img class="author-img" src="{% static 'images/small-img/user_profile_placeholder.jpg' %}" alt="User Image">
                         {% endif %}
                         <form method="post">
-                            {{ comment_form | crispy }}
                             {% csrf_token %}
+                            {{ comment_form | crispy }}
                             <button type="submit" class="btn btn-signup btn-lg mt-5 mb-5">Submit</button>
                         </form>
                         {% endif %}
