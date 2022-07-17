@@ -2,10 +2,9 @@
 
 Project milestone 4 for Code Institute Full-stack development program: Django Framework.
 This project is a Full Stack website built using the Django framework. Tasty Blog is a recipe
-book where users can look or search for a recipe to prepare. When the user is logged in they can
-also like/unlike a post, comment on a post, share their favorite cookbooks by adding a post on the 
-Books Page and upload or update their user image and details. As a user admin, they can post new 
-recipes, approve comments and add new authors.
+book where users can look or search for a recipe to prepare. When the user is logged in they can also 
+like/unlike a post and comment on a post. They can also share their favourite cookbooks by adding a post 
+on the Books Page and upload or update their user image and details.
 
 [Live Project Here](https://tasty-blog-portfolio-project-4.herokuapp.com/)
 
@@ -96,7 +95,7 @@ README Table Content
 1. Navigate around the site and easily view the desired content.
 2. View a list of recipes and choose accordingly.
 3. Search recipes to find specific recipes.
-4. Click on a to read the recipe details.
+4. Click on post to read the recipe details.
 5. Register for an account to avail of the services offered to members.
 6. View the number of likes on a recipe thereby showing which is most popular.
 7. View comments on recipes so that I can read other users opinions.
@@ -107,20 +106,20 @@ README Table Content
 2. Comment on recipes and give my opinion about the posts.
 3. Delete my previous comments.
 4. Manage my profile by updating my details and user image.
-5. Share my favorites cookbooks by posting them on the Books Page.
-6. Edit my favorite cookbook posted previously.
-7. Delete my favorite cookbook posted previously
+5. Share my favourites cookbooks by posting them on the Books Page.
+6. Edit my favourite cookbook posted previously.
+7. Delete my favourite cookbook posted previously.
 8. Logout from the website.
 
 * As a website superuser, I can:
 
 1. Create and publish a new recipe.
-2. Create draft recipe posts so that come back and finished them later.
+2. Create draft recipe posts that can be reviewed and finalised later.
 3. Create a new user, recipes, author and categories.
 4. Delete user, recipes, author, categories and comments.
 5. Approve user's comments.
-6. Edit user's favorite cookbook posted previously
-7. Delete user's favorite cookbook posted previously
+6. Edit user's favourite cookbook that was posted previously.
+7. Delete user's favourite cookbook that was posted previously.
 8. Change the website permissions for a user.
 
 ### Agile Methodology
@@ -132,7 +131,7 @@ All functionality and development of this project were managed using GitHub whic
 
 #### Main Site Goals
 
-* To provide users with a good experience when using the website with food recipes.
+* To provide users with a good experience when using the food recipes website.
 * To provide users with a visually pleasing website that is intuitive to use and easy to navigate.
 * To provide a website with a clear purpose.
 * To provide role-based permissions that allows user to interact with the website.
@@ -219,7 +218,7 @@ comments the post has received.<br>
 
 ![Post Detail Page - Comments](./assets/readme/features/tasty_blog_post_detail_comments_page.jpg)
 
-* At the bottom of this page, users can read the comments posted by other users. If the user is logged or is a 
+* At the bottom of this page, users can read the comments posted by other users. If the user is logged in or is a 
 superuser they have access to the buttons for deleting or updating comments.
 
 ### Edit Comments Page
@@ -253,14 +252,14 @@ using the contact form available on this page.
 
 ![Books Page](./assets/readme/features/tasty_blog_books_page.jpg)
 
-*On this page, registered users can see favorite books posted by other users and if they had already
- published a post they are allowed to edit or delete their own posts.
+* On this page, registered users can see favourite books posted by other users. If they had already published 
+  a post they are allowed to edit or delete their own posts
 
 ### Add/Edit Books Page
 
 ![Add/Edit Book Page](./assets/readme/features/tasty_blog_add_book_page.jpg)
 
-On this page, registered users can fill out the form to add or edit a post with their favorite cookbooks.
+On this page, registered users can fill out the form to add or edit a post with their favourite cookbooks.
 
 ### Search Box
 
@@ -311,7 +310,7 @@ On this page, registered users can fill out the form to add or edit a post with 
 
 ![User Profile Page](./assets/readme/features/tasty_blog_user_profile_page.jpg)
 
-*On the Profile Page, users have access to their own information and can update their user name, email and profile image.
+* On the Profile Page, users have access to their own information and can update their user name, email and profile image.
 
 ### Navbar
 
@@ -324,7 +323,7 @@ On this page, registered users can fill out the form to add or edit a post with 
 * The navbar is fully responsive, collapsing into a hamburger menu when the screen size becomes smaller.
 
 ![Navbar](./assets/readme/features/tasty_blog_navbar_dropdown_menu.jpg)
-* In the navbar users can access to the categories list by clicking on the dropdown menu.
+* In the navbar users can access the categories list by clicking on the dropdown menu.
 
 ### Footer
 
@@ -394,7 +393,7 @@ user's experience.
 
 ![Delete Comment](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_comment_delete_1.jpg)
 
-*When users are logged in to the website and they have previously posted a comment or if the user is a superuser they will see the 
+* When users are logged in to the website and they have previously posted a comment or if the user is a superuser they will see the 
 Delete and Edit buttons at the bottom of comments.<br>
 
 ### Delete Comment - 1
@@ -435,14 +434,14 @@ Delete and Edit buttons at the bottom of comments.<br>
 
 ![Add Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_add_book.jpg)  
 
-*When users are logged in to the website they can publish a post with a favorite cookbook and after they submit the 
+* When users are logged in to the website they can publish a post with a favourite cookbook and after they submit the 
 post they will see a message at the top of the page saying "Your post was sent successfully and is awaiting approval".<br>
 
 ### Edit Book
 
 ![Edit Book](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_book_edit.jpg)  
-*When users are logged in to the website they can edit their own posts published previously and they will see the message 
-"The post was successfully updated" after pressing the Submit button.<br>
+* When users are logged in to the website they can edit their own previously published posts and they will see the message 
+  "The post was successfully updated" after pressing the Submit button.<br>
 
 ### Delete Book 1 
 
@@ -462,7 +461,7 @@ Bootstrap box model will pop up with the message "Are you sure you want to delet
 ![Empty Search](./assets/readme/features/interactive_messages/tasty_blog_user_interaction_profile_empty_search.jpg)
 
 * Any user can search for a keyword using the input search and if the search is done with an empty input they will see a
-message saying, "You forgot to search a recipe. Please try searching again.".<br>
+  message saying, "You forgot to search a recipe. Please try searching again.".<br>
 
 ### No Search Found
 
@@ -483,7 +482,7 @@ delete the following ones:
 5. Profiles
 6. Books
    
-* As admin/superuser I can also approve comments, apporove posts and change the status and give other permissions to the users.<br>
+*As admin/superuser I can also approve comments, approve posts and change the status and give other permissions to the users.<br>
 
 ## Technologies Used
 
@@ -497,56 +496,62 @@ delete the following ones:
 
 #### Django Packages
 
-* [Gunicorn](https://gunicorn.org/) as the server for Heroku
-* [Cloudinary](https://cloudinary.com/) was used to host the static files and media
-* [Dj_database_url](https://pypi.org/project/dj-database-url/) to parse the database URL from the environment variables
-in Heroku
-* [Psycopg2](https://pypi.org/project/psycopg2/) as an adaptor for Python and PostgreSQL databases
-* [Summernote](https://summernote.org/) as a text editor
-* [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) for authentication, registration, account
-management
-* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style the forms
+* [Gunicorn](https://gunicorn.org/)<br>
+   As the server for Heroku
+* [Cloudinary](https://cloudinary.com/)<br>
+   Was used to host the static files and media
+* [Dj_database_url](https://pypi.org/project/dj-database-url/)<br>
+   To parse the database URL from the environment variables in Heroku
+* [Psycopg2](https://pypi.org/project/psycopg2/)<br>
+   Ss an adaptor for Python and PostgreSQL databases
+* [Summernote](https://summernote.org/)<br>
+   As a text editor
+* [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)<br>
+   For authentication, registration, account
+   management
+* [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)<br>
+   To style the forms
 
 ### Frameworks - Libraries - Programs Used
 
-* [Bootstrap](https://getbootstrap.com/)
-* Was used to style the website, add responsiveness and interactivity
-* [Jquery](https://jquery.com/)
-* All the scripts were written using jquery library
-* [Git](https://git-scm.com/)
-* Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
-* [GitHub](https://github.com/)
-* GitHub is used to store the project's code after being pushed from Git
-* [Heroku](https://id.heroku.com)
-* Heroku was used to deploy the live project
-* [PostgreSQL](https://www.postgresql.org/)
-* Database used through heroku.
-* [VSCode](https://code.visualstudio.com/)
-* VSCode was used to create and edit the website
-* [Lucidchart](https://lucid.app/)
-* Lucidchart was used to create the database diagram
-* [PEP8](http://pep8online.com/)
-* PEP8 was used to validate all the Python code
-* [W3C - HTML](https://validator.w3.org/)
-* W3C- HTML was used to validate all the HTML code
-* [W3C - CSS](https://jigsaw.w3.org/css-validator/)
-* W3C - CSS was used to validate the CSS code
-* [Fontawesome](https://fontawesome.com/)
-* To add icons to the website
-* [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-* To check App responsiveness and debugging
-* [Google Fonts](https://fonts.google.com/)
-* To add the 2 fonts that were used throughout the project
-* [Balsamiq](https://balsamiq.com/)
-* To build the wireframes for the project
-* [PIXLR](https://pixlr.com)
-* To convert the images to webp format
-* [CANVA](https://www.canva.com/)
-* To build the logos for the project
-* [Coolors](https://coolors.co/)
-* To build the colour palette of the project
-* [Emailjs](https://www.emailjs.com/)
-* To send emails from the contact form
+* [Bootstrap](https://getbootstrap.com/)<br>
+   Was used to style the website, add responsiveness and interactivity
+* [Jquery](https://jquery.com/)<br>
+   All the scripts were written using jquery library
+* [Git](https://git-scm.com/)<br>
+   Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+* [GitHub](https://github.com/)<br>
+   GitHub is used to store the project's code after being pushed from Git
+* [Heroku](https://id.heroku.com)<br>
+   Heroku was used to deploy the live project
+* [PostgreSQL](https://www.postgresql.org/)<br>
+   Database used through heroku.
+* [VSCode](https://code.visualstudio.com/)<br>
+   VSCode was used to create and edit the website
+* [Lucidchart](https://lucid.app/)<br>
+   Lucidchart was used to create the database diagram
+* [PEP8](http://pep8online.com/)<br>
+   PEP8 was used to validate all the Python code
+* [W3C - HTML](https://validator.w3.org/)<br>
+   W3C- HTML was used to validate all the HTML code
+* [W3C - CSS](https://jigsaw.w3.org/css-validator/)<br>
+   W3C - CSS was used to validate the CSS code
+* [Fontawesome](https://fontawesome.com/)<br>
+   To add icons to the website
+* [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)<br>
+   To check App responsiveness and debugging
+* [Google Fonts](https://fonts.google.com/)<br>
+   To add the 2 fonts that were used throughout the project
+* [Balsamiq](https://balsamiq.com/)<br>
+   To build the wireframes for the project
+* [PIXLR](https://pixlr.com)<br>
+   To convert the images to webp format
+* [CANVA](https://www.canva.com/)<br>
+   To build the logos for the project
+* [Coolors](https://coolors.co/)<br>
+   To build the colour palette of the project
+* [Emailjs](https://www.emailjs.com/)<br>
+   To send emails from the contact form
 
 ### Testing
 
@@ -625,10 +630,10 @@ to copy the URL
 
 ### Content
 
-* All food recipies were taken from [BBC Goodfood](https://www.bbcgoodfood.com/recipes)
-* The books info and images were taken from [Eason](https://www.easons.com/)
+* All food recipes were taken from [BBC Goodfood](https://www.bbcgoodfood.com/recipes)
+* The cookbook’s information and images were sourced from [Eason’s](https://www.easons.com/)
 * The images were taken from [Unsplash](https://unsplash.com/)
-* The Tasty Blog logos and favicon are my own designed and build
+* The Tasty Blog logos and favicon are my own design and build
 
 ### Information Sources / Resources
 
