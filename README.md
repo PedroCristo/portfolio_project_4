@@ -503,7 +503,7 @@ delete the following ones:
 * [Dj_database_url](https://pypi.org/project/dj-database-url/)<br>
    To parse the database URL from the environment variables in Heroku
 * [Psycopg2](https://pypi.org/project/psycopg2/)<br>
-   Ss an adaptor for Python and PostgreSQL databases
+   As an adaptor for Python and PostgreSQL databases
 * [Summernote](https://summernote.org/)<br>
    As a text editor
 * [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)<br>
