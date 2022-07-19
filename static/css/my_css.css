@@ -297,7 +297,7 @@ button,
 }
 
 .alert{
-    margin-top:100px;
+    margin-top:120px;
 }
 
 /*******************************
@@ -327,7 +327,7 @@ button,
 }
 
 .carousel-item {
-    height: 93vh;
+    height: 100vh;
 }
 
 .carousel-bg-1 {
