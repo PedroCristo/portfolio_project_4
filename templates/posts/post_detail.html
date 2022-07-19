@@ -95,7 +95,11 @@
                         {% endif %}
                     </div>
                     <!-- Comments -->
+                    {% if comments %}
                     <h4>Comments:</h4>
+                    {% else %}
+                    <h4>No comments yet:</h4>
+                    {%endif %}
                     <span class="text-secondary"><i class="far fa-comments"></i>{{ num_comments }}</span>
                     {% for comment in comments %}
                     <div class="users-comments">
