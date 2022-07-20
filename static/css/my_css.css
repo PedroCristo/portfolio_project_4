@@ -202,7 +202,7 @@ button,
 }
 
 #searched-box .row {
-    padding: 5px 0 25px 0;
+    padding: 5px 0 55px 0;
 }
 
 #searched-box .searched-results .row-results:hover {
@@ -1006,5 +1006,11 @@ body.modal-open {
 
     .book-card .content-description p {
         margin-bottom: 95px !important;
+    }
+}
+
+@media only screen and (min-height: 1050px) {
+    #searched-box .row {
+        padding: 5px 0 182px 0;
     }
 }
