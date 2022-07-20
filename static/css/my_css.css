@@ -604,6 +604,7 @@ button,
 *                              *
 *******************************/
 #post-content .post-content-img {
+    margin-top: 40px;
     width: 85%;
     display: block;
 }
