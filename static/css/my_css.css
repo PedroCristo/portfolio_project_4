@@ -711,6 +711,9 @@ body.modal-open {
 *          Books PAGE          *
 *                              *
 *******************************/
+.book-content .title {
+    margin-top: 70px;
+}
 .book-content .sub-title {
     font-size: clamp(1.5rem, 2vw, 2.2rem);
     margin: -25px 0 25px;
