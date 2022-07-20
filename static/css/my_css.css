@@ -192,7 +192,8 @@ button,
 *                              *
 *******************************/
 #searched-box .container {
-    margin-bottom: 20vh !important;
+    margin-top:  10vh;
+    margin-bottom: 25vh !important;
     height: auto;
 }
 
@@ -201,7 +202,7 @@ button,
 }
 
 #searched-box .row {
-    padding: 25px;
+    padding: 5px 0 25px 0;
 }
 
 #searched-box .searched-results .row-results:hover {
@@ -215,7 +216,7 @@ button,
 
 #searched-box .results-empty h2 {
     line-height: 50px;
-    margin-top: 34%;
+    margin-top: 27%;
     font-size: clamp(1.5rem, 2vw, 2.1rem);
 }
 
