@@ -1,6 +1,6 @@
 # Tasty Blog - Introduction
 
-Project milestone 4 for Code Institute Full-stack development program: Django Framework.
+Project milestone 4 for Code Institute Full-stack development program.
 This project is a Full Stack website built using the Django framework. Tasty Blog is a recipe
 book where users can look or search for a recipe to prepare. When the user is logged in they can also 
 like/unlike a post and comment on a post. They can also share their favourite cookbooks by adding a post 
