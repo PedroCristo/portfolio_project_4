@@ -49,11 +49,11 @@ Lighthouse was used to test Performance, Best Practices, Accessibility and SEO o
 ![HTML Validation Result](./assets/readme/test/tasty_blog_html_validator_results.jpg).
 
 ### CSS Validation
-* Custom CSS was validated using W3C Jigsaw validation service. Forty-three warnings were displayed, however, 
-  these are related to Google Fonts and vendor extension prefixes which will not affect the CSS performance.
-  
+
 ![CSS Validation Result](./assets/readme/test/tasty_blog_css_validator_results.jpg).
 ![CSS Validation Result](./assets/readme/test/tasty_blog_css_validator_results_warnings.jpg).
+* Custom CSS was validated using W3C Jigsaw validation service. Forty-three warnings were displayed, however, 
+  these are related to Google Fonts and vendor extension prefixes which will not affect the CSS performance.
 
 ### JavaScript Validation
 ![CSS Validation Result](./assets/readme/test/tasty_blog_js_validator_results.jpg).
