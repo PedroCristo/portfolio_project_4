@@ -100,7 +100,7 @@ README Table Content
 6. View the number of likes on a recipe thereby showing which is most popular.
 7. View comments on recipes so that I can read other users opinions.
 
-* As logged in website user, I can:
+* As a logged in website user, I can:
 
 1. Like/unlike recipes marking the recipes I enjoyed.
 2. Comment on recipes and give my opinion about the posts.
