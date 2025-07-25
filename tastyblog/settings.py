@@ -58,6 +58,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # === MIDDLEWARE ===
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise at the top
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -89,13 +90,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tastyblog.wsgi.application'
 
 # === DATABASE CONFIG ===
-# FORCE using SQLite locally and in production (ignoring DATABASE_URL env var)
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ['DATABASE_URL'])
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # === PASSWORD VALIDATORS ===
 AUTH_PASSWORD_VALIDATORS = [
@@ -122,15 +127,15 @@ MEDIA_URL = '/media/'
 # === CLOUDINARY CONFIG ===
 CLOUDINARY_URL = os.environ.get(
     'CLOUDINARY_URL',
-    'cloudinary://736832558482829:j7KxZoclb2xsUrgxcHEL0sXmbV0@dzxx8m2el'
+    'cloudinary://736832558482829:j7KxZoclb2xsUrgxcHEL0sXmbV0@dzxx8m2el'  # fallback for local
 )
 os.environ.setdefault('CLOUDINARY_URL', CLOUDINARY_URL)
 
-if CLOUDINARY_URL:
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-else:
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+# Use Cloudinary for media (uploaded user files)
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Use WhiteNoise for static files (CSS, JS)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # === DEFAULT PK FIELD ===
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
